@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+}
+
+.Home_logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .Home_logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.App {
+  text-align: center;
+}
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height:10vh;
+  background: rgb(73,79,82);
+  color:white;
+}
+.nav-links{
+  width:50%;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  list-style:none;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

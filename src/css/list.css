@@ -1,0 +1,35 @@
+body { background: #fff; }
+.result,.resultP {
+  border-collapse: collapse;
+  border-top: 3px solid lightgray;
+  width: 1500px;
+ 
+}  
+.result th, .resultP th {
+  color: black;
+  background: #f0f6f9;
+}
+.result th, .result td, .resultP th, .resultP td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+.result th:first-child, .result td:first-child,.resultP th:first-child, .resultP td:first-child {
+  border-left: 0;
+}
+.result th:last-child, .result td:last-child, .resultP th:last-child, .resultP td:last-child {
+  border-right: 0;
+}
+
+
+@media (max-width:600px){ /*가로 너비가 600px 이하일 때 아래 스타일 적용*/
+  .result th:first-child{
+   width: 10px;
+  }
+ .result{
+   width:450px;
+ }
+ .resultP{
+  width:700px;
+}
+
+}

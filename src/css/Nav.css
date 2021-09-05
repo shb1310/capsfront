@@ -1,0 +1,42 @@
+#menuBox { display: none; }
+#menuBox ~ * {
+  position: absolute;
+  transition: transform 0.4s;
+}
+#menuBox:checked ~ * { transform: translate3d(200px, 0, 0); }
+#menuBox ~ label {
+  font-size: 54px;
+  top: -16px; left: 8px;
+  cursor: pointer;
+  z-index: 1;
+}
+#menuBox ~ nav {
+  background: black;
+  width: 200px;
+  left: -200px;
+  height:50%;
+}
+#menuBox ~ nav * {
+  margin: 0; padding: 0;
+  color: white;
+}
+#menuBox ~ nav header {
+  background: teal;
+  padding: 1em;
+}
+#menuBox ~ nav a {
+  display: block;
+  text-decoration: none;
+  padding: 1em;
+}
+#menuBox ~ nav a:hover { background: gray; }
+
+#content {
+  position: relative;
+  padding: 2.6em 1em 1em;
+  width: 100%;
+  background: rgb(255, 255, 255);
+}
+#menuList{
+  list-style:none;
+}

@@ -1,0 +1,74 @@
+.Home{
+  text-align: center;
+}
+.Homelogo{
+  display:inline-block;
+}
+.button_agree, .button_Nagree {
+    font-size:15px;
+    font-family:Georgia;
+    width:140px;
+    height:50px;
+    border-width:1px;
+    color:rgba(255, 255, 255, 1);
+    border-color:rgba(0, 0, 0, 1);
+    font-weight:bold;
+    border-top-left-radius:28px;
+    border-top-right-radius:28px;
+    border-bottom-left-radius:28px;
+    border-bottom-right-radius:28px;
+    text-shadow: 1px 1px 0px #2f6627;
+    background:rgb(0, 0, 0);
+    left: 50%;
+    top:50%;
+    }
+  
+  .button_agree:hover {
+    background: rgb(255, 255, 255);
+    color:black;
+  }
+  .button_Nagree:hover {
+    background: rgb(255, 255, 255);
+    color:black;
+  }
+  #title{
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+    font-family: 'Gugi', cursive;
+    text-align: center;
+    
+  }
+  
+  @media (max-width:600px){ /*가로 너비가 600px 이하일 때 아래 스타일 적용*/
+  
+    .Home_logo { 
+        width: 150px;
+        height: 150px;
+        float:inline-start;
+    }
+    .button_agree, .button_Nagree {
+      font-size:15px;
+      font-family:Georgia;
+      width:100px;
+      height:45px;
+      border-width:1px;
+      color:rgba(255, 255, 255, 1);
+      border-color:rgba(0, 0, 0, 1);
+      font-weight:bold;
+      border-top-left-radius:28px;
+      border-top-right-radius:28px;
+      border-bottom-left-radius:28px;
+      border-bottom-right-radius:28px;
+      text-shadow: 1px 1px 0px #2f6627;
+      background:rgb(0, 0, 0);
+      }
+      #title{
+        text-align: center;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 30px;
+        font-family: 'Gugi', cursive;
+        text-align: center;
+        
+      }
+}

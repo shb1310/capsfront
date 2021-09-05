@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+.searchIcon{
+  width:50px;
+  height:50px;
+}
+.search {
+    
+    text-align: center;
+    margin: 0 auto;
+}
+.menu,.searchIcon{
+  margin-top: 30px;
+  margin-left:10px;
+}
+.inputtxt {
+    width: 60%;
+    border-radius: 20px;
+    border: 1px solid #bbb;
+    margin-top: -10px;
+    height:50px;
+   
+  }
+  @media (max-width:600px){ /*가로 너비가 600px 이하일 때 아래 스타일 적용*/
+    .menu{
+      margin-top: 5px;
+      margin-left:10px;
+    }
+    .inputtxt {
+        width: 60%;
+        border-radius: 20px;
+        border: 1px solid #bbb;
+        padding: 10px 12px;
+        margin-top:-10px;
+        
+      }
+}
