@@ -27,7 +27,7 @@ function List(props) {
  	useEffect(()=>
 //  const getData = ()=>
 	{
-	axios.get("http://127.0.0.1:8000/testapp/api", {
+	axios.get("http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/api", {
 	params: {
 		prid: key,
 		pname: 'pname'
