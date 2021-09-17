@@ -8,7 +8,7 @@ function Nav() {
   
   return (
     <div className="Nav">
-     <input id="menuBox" type="checkbox" /><label for="menuBox">&equiv;</label>{/*슬라이드 메뉴를 나오게 하기 위한 것 */}
+     <input id="menuBox" type="checkbox" /><label htmlFor="menuBox">&equiv;</label>{/*슬라이드 메뉴를 나오게 하기 위한 것 */}
   <nav>
     <ul id="menuList">{/*슬라이드 메뉴 눌러서 열렸을 때 나오는 메뉴 리스트 ->loc, list 존재 */}
       <Link to='/loc'><li>Loc</li></Link>

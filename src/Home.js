@@ -15,23 +15,7 @@ function Home() {
       setModalOpen(false);
       console.log('메인화면으로 이동 안함');
   }
-  function button_Nevent(){/*이 함수는 이용되지 않기 때문에 삭제 예정(08/01)*/
-     /*button_Nevent: 동의안함 버튼을 눌렀을 때, 알림창을 띄운 후 서비스 이용 여부를 선택하는 함수->추후 수정 필요
-        -현재(7/29) 확인 버튼을 눌러도 /loc 페이지로 이동 안됨*/
-     /*  var conf=window.confirm("IP에 따른 주소 위치 사용 미동의 시 위치 기반 서비스를 이용할 수 없습니다.");*/
-     <React.Fragment>
-     <button onClick={ openModal }>모달팝업</button>
-     {/*header 부분에 텍스트를 입력한다.*/}
-     <Modal open={ modalOpen } close={ closeModal } header="Modal heading">
-
-       {/* Modal.js <main> { props.children } </main>에 내용이 입력된다. */}
-         리액트 함수형 모달 팝업창입니다.
-         쉽게 만들 수 있어요. 
-         같이 만들어봐요!
-     </Modal>
-      </React.Fragment>
-    
-     }
+  
 
   return (
     <div className="Home">

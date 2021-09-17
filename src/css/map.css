@@ -1,11 +1,32 @@
 #map{
     text-align:center;
-    width: 1700px;
+    margin-left:25px;
+    margin-bottom:25px;
+    width: 800px;
+    height:500px;
+    float:left;
+}
+#roadview{
+  text-align:center;
+  margin-left:25px;
+  margin-bottom:25px;
+  width: 800px;
+  height:500px;
+  float:left;
 }
 
   /* Use a media query to add a breakpoint at 800px: */
   @media screen and (max-width: 800px) {
    #map{
-     max-width:100%;
+    margin-left:-5px;
+    max-width:100%;
+    width:500px;
+    height: 400px;
    }
+   #roadview{
+     margin-left:-5px;
+    max-width:100%;
+    width: 500px;
+    height:400px;
+  }
   }

@@ -36,6 +36,9 @@ li{
     font-size:50px;
 }
 @media (max-width:600px){ /*가로 너비가 600px 이하일 때 아래 스타일 적용*/
+    hr{
+       max-width: 100%;
+    }
     li{
         font-size:30px;
     }
@@ -50,6 +53,7 @@ li{
         font-family: 'Gugi', cursive;
     }
     #logo {
+        margin-left:-40px;
        margin-top:-10px;
         width: 40px;
         height: 40px;

@@ -26,8 +26,6 @@
 }
 
 @media (max-width:600px){ /*가로 너비가 600px 이하일 때 아래 스타일 적용*/
-  
-  
     #한식, #중식, #일식{
         background-color: white;
         color:black;
@@ -80,5 +78,11 @@
         border: solid 2px grey;
         border-radius: 12px;
         margin:10px;
+    }
+    #한식{
+        margin-left:-60px;
+    }
+    #서양식{
+        margin-left:-50px;
     }
    }

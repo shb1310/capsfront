@@ -2,38 +2,37 @@ import React from 'react';
 import './App.css';
 import './css/logoF.css';
 import './css/Home.css';
-import Loc from './Loc';
-import LocK from './LocK';
-import LocZ from './LocZ';
-import LocL from './LocL';
-import LocE from './LocE';
-import LocS from './LocS';
-import LocP from './LocP';
-import LocG from './LocG';
-import LocKG from './LocKG';
-import LocZG from './LocZG';
-import LocLG from './LocLG';
-import LocEG from './LocEG';
-import LocSG from './LocSG';
-import LocPG from './LocPG';
-import List from './List';
-import ListK from './ListK';
-import ListZ from './ListZ';
-import ListL from './ListL';
-import ListE from './ListE';
-import ListS from './ListS';
-import ListP from './ListP';
+import Loc from './Map/Loc';
+import LocK from './Map/LocK';
+import LocZ from './Map/LocZ';
+import LocL from './Map/LocL';
+import LocE from './Map/LocE';
+import LocS from './Map/LocS';
+import LocP from './Map/LocP';
+import LocG from './Map/LocG';
+import LocKG from './Map/LocKG';
+import LocZG from './Map/LocZG';
+import LocLG from './Map/LocLG';
+import LocEG from './Map/LocEG';
+import LocSG from './Map/LocSG';
+import LocPG from './Map/LocPG';
+import List from './List/List';
+import ListK from './List/ListK';
+import ListZ from './List/ListZ';
+import ListL from './List/ListL';
+import ListE from './List/ListE';
+import ListS from './List/ListS';
+import ListP from './List/ListP';
 import Home from'./Home';
 import Search from'./Search';
-
+import Share from './Share'
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
 
 
 function App() {
 
   return (
-    
-    <Router>
+     <Router>
     <div className="App">
      
      <Switch>
@@ -60,6 +59,8 @@ function App() {
      <Route path="/lists" component={ListS} />
      <Route path="/listp" component={ListP} />
      <Route path="/search" component={Search} />
+     <Route path="/share" component={Share} />
+     
      </Switch>
     </div>
     </Router>

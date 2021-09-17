@@ -1,0 +1,21 @@
+#shareBtn{
+    margin-top:300px;
+    width:600px;
+    height: 200px;
+    background-color: black;
+    color:white;
+    font-family:fantasy;
+    font-size:50px;
+    border: solid 2px grey;
+    border-radius: 50px;
+    z-index:99;
+}
+#shareImg{
+    width:180px;
+    height:160px;
+    z-index:-1;
+}
+#shareBtn:hover{
+    background-color: white;
+    color:black;
+}
