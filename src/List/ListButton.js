@@ -7,12 +7,14 @@ import '../css/Search.css';
 import Nav from '../Nav';
 
 function ListButton() {
+	console.log('ListButton');
+	const url = "/list";
     return(
         
           <div id="button">{/*버튼 전체에 대한 div*/}
               <Nav/>
            <div id="button1">{/*한식, 중식, 일식, 서양식에 대한 버튼 -> 각 페이지로 이동 */}
-           <Link to='/listk'>  <button id="한식" value="한식">한식</button></Link>
+           <Link to={{pathname: url, state: { key: '한식'}}}>  <button id="한식" value="한식">한식</button></Link>
            <Link to='/listz'>   <button id="중식" value="중식">중식</button></Link>
            <Link to='/listl'>    <button id="일식" value="일식">일식</button></Link>
          
