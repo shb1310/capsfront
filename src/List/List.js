@@ -27,7 +27,7 @@ function List(props) {
  	useEffect(()=>
 //  const getData = ()=>
 	{
-	axios.get("http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/api", {
+	axios.get("http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi", {
 	params: {
 		prid: key,
 		pname: 'pname'
@@ -60,9 +60,9 @@ function List(props) {
           {
           	info.map(item => {return(
           		<tr>
-           			<td class="id">{item.id}</td>
-          				<td class="name">{item.name}</td>
-           				<td class="address">{item.content}</td>
+           			<td class="id">{item.ansimseq}</td>
+          				<td class="name">{item.owner}</td>
+           				<td class="address">{item.address1}</td>
           		</tr>)
           	})			
 		}
