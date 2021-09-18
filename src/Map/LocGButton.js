@@ -14,13 +14,13 @@ function LocGButton() {
            <Link to='/lockg'>  <button id="한식" value="한식">한식</button></Link>
            <Link to='/loczg'>   <button id="중식" value="중식">중식</button></Link>
            <Link to='/loclg'>    <button id="일식" value="일식">일식</button></Link>
-            
+           <Link to='/locsg'>   <button id="서양식" value="서양식">서양식</button></Link>
           </div> 
           <div id="button2">{/*기타, 즐겨찾기, 공영주차장에 대한 버튼->각 페이지로 이동 (즐겨찾기 추후 삭제 예정) */}
-          <Link to='/locsg'>   <button id="서양식" value="서양식">서양식</button></Link>
-          <Link to='/loceg'>   <button id="기타" value="기타">기타</button></Link>     
-          <Link to='/locpg'>   <button id="공영주차장" value="공영주차장">공영주차장</button></Link>
-          </div>
+         
+          <Link to='/loceg'>   <button id="기타외국식" value="기타외국식">기타외국식</button></Link>
+          <Link to='/locetg'>   <button id="기타_음식점업" value="기타 음식점업">기타 음식점업</button></Link>       
+         </div>
           <div class="search">{/* 검색창에 대한 div*/}
           <Link to='/list'><img src={menu} className="menu" alt="menu"/></Link>{/* loc<->list로 서로 바꿔주는 이미지, Link로 연결*/}
           <input className="inputtxt" placeholder="검색어를 입력하세요"/>
