@@ -66,10 +66,15 @@ function List(props) {
           	info.map(item => {return(
           		<tr>
            			<td class="id">{item.ansimseq}</td>
+
           				<td class="name">{item.workplacename}</td>
            				<td class="address1">{item. address1}</td>
                    <td class="address2">{item. address2}</td>
                    <td class="number">{item.tel}</td>
+
+          				<td class="name">{item.owner}</td>
+           				<td class="address">{item.address1}</td>
+
           		</tr>)
           	})			
 		}
