@@ -1,20 +1,38 @@
-import React,{useState} from 'react';
-import "./css/Info.css";
-
+import React,{useState,useEffect} from 'react';
+import "../css/Info.css";
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
-const Info = ( props ) => {
-    const { open, close, header , call,share} = props;
-    console.log('List');
+const Modal = ( props ) => {
+    console.log('Info');
 
-  const [info, setInfo] = useState([]);	  
-  const request = axios
- 	.get("http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com//testapp/api")
-    //성공시
-  .then(res => setInfo(res.data))
-    //실패시
-  .catch(err => console.log(err))
+    var key;
+  
+    if (props.location.state === undefined){ 	
+      key = "unkey";
+  }
+    else{
+      key =  props.location.state['key'];
+  }
+  //  var deps;
+    const [info, setInfo] = useState([]);	  
+  //  const request = axios
+       useEffect(()=>
+  //  const getData = ()=>
+      {
+      axios.get("http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi", {
+      params: {
+          prid: key,
+          pname: 'pname'
+      }
+    })
+        .then(res => setInfo(res.data))
+        .catch(err => console.log(err))
+    },{deps:[]})
+  
+      
+    const { open, close, header , call,share} = props;
+   
  function copy() {
   {
     info.map(item => {return(
@@ -25,7 +43,7 @@ const Info = ( props ) => {
         selBox.style.left = '0';
         selBox.style.top = '0';
         selBox.style.opacity = '0';
-        selBox.value ={item.content};
+        selBox.value ={item.address1};
         
         document.body.appendChild(selBox);
         selBox.focus();
@@ -80,4 +98,4 @@ const Info = ( props ) => {
     )
 }
 
-export default Info;
+export default Modal;
