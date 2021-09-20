@@ -46,23 +46,35 @@ function List(props) {
     <table class="result">
         <thead>
           <tr>
-            <th>ID</th>
-            <th class="name">name</th>
-            <th class="address">content</th>  
+            <th>안심식당SEQ</th>
+            <th class="name">식당명</th>
+            <th class="address1">주소</th>  
+            <th class="address2">주소 상세</th>  
+            <th class="number">전화번호</th>  
           </tr>
         </thead>
         <tbody>
-          <tr>
+        <tr >
             <td>{0.}</td>
             <td class="name">key</td>
-            <td class="address">{key}</td>  
-          </tr>
+            <td class="address1">{key}</td>  
+            <td class="address2"></td>  
+            <td class="name"></td>
+           
+        </tr>
           {
           	info.map(item => {return(
           		<tr>
            			<td class="id">{item.ansimseq}</td>
+
+          				<td class="name">{item.workplacename}</td>
+           				<td class="address1">{item. address1}</td>
+                   <td class="address2">{item. address2}</td>
+                   <td class="number">{item.tel}</td>
+
           				<td class="name">{item.owner}</td>
            				<td class="address">{item.address1}</td>
+
           		</tr>)
           	})			
 		}

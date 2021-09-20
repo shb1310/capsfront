@@ -12,7 +12,8 @@ function Nav() {
   <nav>
     <ul id="menuList">{/*슬라이드 메뉴 눌러서 열렸을 때 나오는 메뉴 리스트 ->loc, list 존재 */}
       <Link to='/loc'><li>Loc</li></Link>
-      <Link to='/list'> <li>List</li></Link>  
+      <Link to='/list'> <li>List</li></Link> 
+      <Link to='/listp'> <li>공영주차장</li></Link>   
     </ul>
   </nav>
   <div id="content">{/*홈페이지 맨 위 가운데에 항상 떠있는 로고이미지와 안심식당 */}

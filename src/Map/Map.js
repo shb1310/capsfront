@@ -4,7 +4,7 @@ import '../css/Loc.css'
 import '../css/overlay.css'
 
 const Map=()=>{
-  
+
   useEffect(()=>{
     var mapWrapper = document.getElementById('mapWrapper'); //지도를 감싸고 있는 DIV태그
     var infowindow = new kakao.maps.InfoWindow();

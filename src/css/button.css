@@ -1,23 +1,23 @@
 #한식:focus, #중식:focus, #일식:focus, #서양식:focus, #기타:focus,#즐겨찾기:focus, #공영주차장:focus {
     background-color: gold;
   }
-#한식, #중식, #일식, #서양식, #기타{
+#한식, #중식, #일식, #서양식{
     background-color: white  ;
     color:black  ;
     border-color: black;
     margin:10px;
-    width: 350px;
+    width: 250px;
     height:50px;
     font-size:35px;
     border: solid 2px grey;
     border-radius: 100px;
    
 }
-#즐겨찾기, #공영주차장{
+#기타외국식,#기타_음식점업, #공영주차장{
     background-color: white;
     color:black;
     border-color: black;
-    width: 450px;
+    width: 350px;
     height:50px;
     font-size:35px;
     margin:20px;
