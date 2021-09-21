@@ -1,4 +1,4 @@
-import './css/share.css';
+
 import shareImg from './images/share.svg';
 
 const Share = ( props ) => {
