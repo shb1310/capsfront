@@ -1,10 +1,35 @@
 /*global kakao*/ 
-import React, { useEffect/*,useState*/ } from 'react'
+import React, { useEffect,useState } from 'react'
 import '../css/Loc.css'
 import '../css/overlay.css'
+import axios from 'axios';
 
-const Map=()=>{
+const Map=(props)=>{
+    var key;
 
+    if (props.location.state === undefined){ 	
+      key = "unkey";
+  }
+    else{
+      key =  props.location.state['key'];
+  }
+  //  var deps;
+    const [info, setInfo] = useState([]);	  
+  //  const request = axios
+       useEffect(()=>
+  //  const getData = ()=>
+      {
+     
+      axios.get("http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi", {
+      params: {
+          prid: key,
+          pname: 'pname'
+      }
+    
+    })
+        .then(res => setInfo(res.data))
+        .catch(err => console.log(err))
+    },{deps:[]})
   useEffect(()=>{
     var mapWrapper = document.getElementById('mapWrapper'); //지도를 감싸고 있는 DIV태그
     var infowindow = new kakao.maps.InfoWindow();
@@ -81,10 +106,11 @@ function toggleRoadview(position){
         }
     });
 }
-    
+
 // 주소-좌표 변환 객체를 생성합니다
 var geocoder = new kakao.maps.services.Geocoder();
 var addrData = [
+    
     '서울특별시 관악구 관악로 1', 
     '대전광역시 유성구 대학로 99', 
     '부산광역시 금정구 부산대학로63번길 2',
