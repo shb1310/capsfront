@@ -6,7 +6,7 @@ import '../css/list.css';
 import '../css/map.css';
 import '../css/Loc.css'
 import '../css/Search.css';
-import Map from './Map';
+import Map from './MapView';
 import LocButton from './LocButton';
 
 

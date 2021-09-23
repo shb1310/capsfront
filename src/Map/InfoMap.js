@@ -1,38 +1,33 @@
 /*global kakao*/ 
-import React, { useEffect} from 'react';
+import React from 'react';
+import { Map,MapMarker } from 'react-kakao-maps-sdk';
 import '../css/overlay.css';
 import '../css/InfoMap.css';
 
-const InfoMap=()=>{
-
-  useEffect(()=>{
-    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = { 
-        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
-    };
-
-var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-
-// 마커가 표시될 위치입니다 
-var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667); 
-
-// 마커를 생성합니다
-var marker = new kakao.maps.Marker({
-    position: markerPosition
-});
-
-// 마커가 지도 위에 표시되도록 설정합니다
-marker.setMap(map);
-   
-    }, [])
-    return (  
-    <div className="map_wrap" >  
-        <div id="mapWrapper" >
-            <div id="map" ></div> 
-        </div>
-    </div>
+function InfoMap(){
+    return (
+      <Map // 지도를 표시할 Container
+        center={{
+          // 지도의 중심좌표
+          lat: 33.450701,
+          lng: 126.570667,
+        }}
+        style={{
+          // 지도의 크기
+          width: "100%",
+          height: "450px",
+        }}
+        level={4} // 지도의 확대 레벨
+      >
+        <MapMarker // 마커를 생성합니다
+          position={{
+            // 마커가 표시될 위치입니다
+            lat: 33.450701,
+            lng: 126.570667,
+          }}
+        />
+      </Map>
     )
-}
+  }
 
 export default InfoMap;

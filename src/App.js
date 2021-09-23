@@ -22,11 +22,12 @@ import List from './List/List';
 import ListP from './List/ListP';
 import Home from'./Home';
 import Search from'./Search';
-import Share from './Share'
+import Share from './Share';
+
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
 
 
-function App() {
+const App=()=> {
 
   return (
      <Router>
@@ -54,7 +55,7 @@ function App() {
      <Route path="/listp" component={ListP} />
      <Route path="/search" component={Search} />
      <Route path="/share" component={Share} />
-   
+
      </Switch>
     </div>
     </Router>
