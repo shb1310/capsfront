@@ -11,6 +11,7 @@ const MapView=(props)=>{
     lng: 126.570667,
   }
 
+  
   return (
     <div style={{position: "absolute", left: "250px",top: "500px", width: "1200px", height: "600px" }}>
       <Map // 로드뷰를 표시할 Container
