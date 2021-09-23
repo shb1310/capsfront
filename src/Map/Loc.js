@@ -7,6 +7,7 @@ import '../css/map.css';
 import '../css/Loc.css'
 import '../css/Search.css';
 import Map from './MapView';
+import Addr from './Addr';
 import LocButton from './LocButton';
 
 
@@ -19,7 +20,7 @@ function Loc() {
       <LocButton />{/* 버튼 불러오기 */}
         <br /><br />
        {/* <img src={map} className="map" alt="map"/>{/* 지도 나타냄-> 지금은 이미지 이지만, 추후 지도 api로 변경 예정(7/29) */}
-       <Map />
+       <Map/>
     </div>
   );
 }

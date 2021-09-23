@@ -1,5 +1,5 @@
-
 import shareImg from './images/share.svg';
+import './css/share.css';
 
 const Share = ( props ) => {
   var shareBtn =document.getElementById("shareBtn");
@@ -25,8 +25,8 @@ const Share = ( props ) => {
           }
     })}
     return (
-        <button id="shareBtn" onClick={shareBtn}>
-          <img id="shareImg" src={shareImg} />공유하기</button>
+        <button id="shareBtn" onClick={shareBtn} >
+          {/*<img id="shareImg" src={shareImg} />*/}공유하기</button>
     )
 }
 

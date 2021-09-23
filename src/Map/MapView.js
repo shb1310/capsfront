@@ -23,15 +23,7 @@ const MapView=(props)=>{
         }}
         level={3}
       >
-        <MapMarker position={placePosition} >
-
-          {/* MapMarker의 자식을 넣어줌으로 해당 자식이 InfoWindow로 만들어지게 합니다 */}
-        {/* 인포윈도우에 표출될 내용으로 HTML 문자열이나 React Component가 가능합니다 */}
-        <div style={{ padding: "5px", color: "#000" }}>
-         {{placePosition}} <br />
-          
-        </div>
-        </MapMarker>
+        <MapMarker position={placePosition} />
         {toggle === "map" && (
           <input
             style={{

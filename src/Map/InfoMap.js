@@ -1,10 +1,36 @@
 /*global kakao*/ 
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import { Map,MapMarker } from 'react-kakao-maps-sdk';
 import '../css/overlay.css';
 import '../css/InfoMap.css';
 
-function InfoMap(){
+
+function InfoMap(props){
+ /* var key;
+
+  if (props.location.state === undefined){ 	
+	key = "unkey";
+}
+  else{
+	key =  props.location.state['key'];
+}
+//  var deps;
+  const [info, setInfo] = useState([]);	  
+//  const request = axios
+ 	useEffect(()=>
+//  const getData = ()=>
+	{
+   
+	axios.get("http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi", {
+	params: {
+		prid: key,
+		pname: 'pname'
+	}
+  
+  })
+  	.then(res => setInfo(res.data))
+  	.catch(err => console.log(err))
+  },{deps:[]})*/
     return (
       <Map // 지도를 표시할 Container
         center={{
