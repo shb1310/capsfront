@@ -1,0 +1,28 @@
+
+options:
+g	#gps
+s	#statename
+w	#wardname
+p	#workplacename
+a	#address1
+A	#address2
+c	#category
+d	#categorydetail
+
+parameters:
+lat				#g
+lon				#g
+range			#g
+statename		#s
+wardname		#w
+workplacename	#p
+address1		#a
+address2		#A
+category		#c
+categorydetail	#d
+
+옵션은 순서 상관없이 입력하시면 됩니다. 'wd, 'dw' 결과는 동일합니다.
+example options 'wd', 'gd', 'gpd' ...
+
+옵션에 따라 필요한 parameter만 입력하시면 됩니다. parameter 뒤에 주석으로 표시한 옵션은
+해당 옵션 사용할 때 필수적으로 입력하셔야 한다는 뜻입니다.
