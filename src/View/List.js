@@ -41,7 +41,7 @@ var urls = ["http://127.0.0.1:8000/testapp/ansimapi"
 
 var parameterstest = {
 	options : 'dw',
-	wardname: null,
+	wardname: '은평구',
 	workplacename: null,
 	categorydetail: key
 }
