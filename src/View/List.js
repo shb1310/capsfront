@@ -35,26 +35,26 @@ function List(props) {
 //  var deps;
   const [info, setInfo] = useState([]);	  
 //  const request = axios
-var urls = ["http://127.0.0.1:8000/testapp/testapi"
-,"http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi"
-,"http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/testapi"]
+var urls = ["http://127.0.0.1:8000/testapp/ansimapi"
+,"http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi"]
 
+
+var parameterstest = {
+	options : 'dw',
+	wardname: null,
+	workplacename: null,
+	categorydetail: key
+}
  	useEffect(()=>
 //  const getData = ()=>
 	{
    
-    axios.get(urls[2], {
-      params: {
-        prid: 'd',
-        content: key
-      }
-  
+    axios.get(urls[1], {
+      params: parameterstest 
   })
   	.then(res => setInfo(res.data))
   	.catch(err => console.log(err))
   },{deps:[]})
-  
-  
   
   //window.location.replace("/list")
   return (
@@ -95,7 +95,6 @@ var urls = ["http://127.0.0.1:8000/testapp/testapi"
             전화번호:{item.tel}
      </Modal>
                  </tr>
-               
                     )
           	})			
 		}
