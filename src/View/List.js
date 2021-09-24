@@ -9,7 +9,7 @@ import '../css/Loc.css'
 import '../css/Search.css';
 import ListButton from './ListButton';
 import axios from 'axios';
-import InfoMap from '../Map/InfoMap';
+import InfoMap from './InfoMap';
 import Modal  from './Modal';
 
 function List(props) {
@@ -35,15 +35,19 @@ function List(props) {
 //  var deps;
   const [info, setInfo] = useState([]);	  
 //  const request = axios
+var urls = ["http://127.0.0.1:8000/testapp/testapi"
+,"http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi"
+,"http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/testapi"]
+
  	useEffect(()=>
 //  const getData = ()=>
 	{
    
-	axios.get("http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi", {
-	params: {
-		prid: key,
-		pname: 'pname'
-	}
+    axios.get(urls[2], {
+      params: {
+        prid: 'd',
+        content: key
+      }
   
   })
   	.then(res => setInfo(res.data))

@@ -9,7 +9,7 @@ import Nav from '../Nav';
 function LocButton() {
 
     console.log('LocButton');
-    const url = "/addr";
+    const url = "/loc";
     return(
         
           <div id="button">{/*버튼 전체에 대한 div*/}

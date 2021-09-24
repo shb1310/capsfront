@@ -6,14 +6,14 @@ import '../css/list.css';
 import '../css/map.css';
 import '../css/Loc.css'
 import '../css/Search.css';
-import ListButton from './ListButton';
+import Nav from '../Nav';
 
 
 function ListP() {
   console.log('ListP');
   return (
     <div id="ListP">
-    <ListButton/>{/* 버튼 불러오기 */}
+    <Nav/>
     <br /><br />
     <table className="resultP"> {/*공영주차장에 대한 리스트->추후 백에서 받아온 데이터로 변경 예정 -> 지금은 예시*/}
         <thead>
