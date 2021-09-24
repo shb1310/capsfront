@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import './css/logoF.css';
 import './css/Nav.css';
-import logo from './logo.svg';
+import logo from './images/logo.svg';
 import {Link} from 'react-router-dom';
 function NavG() {
   

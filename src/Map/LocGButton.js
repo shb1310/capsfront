@@ -1,9 +1,9 @@
 import React from 'react';
-import menu from '../menu.svg';
+import menu from '../images/menu.svg';
 import '../css/Search.css'
 import {Link} from 'react-router-dom';
 import NavG from '../NavG';
-import search from '../search.svg';
+import search from '../images/search.svg';
 function LocGButton() {
   
     return(

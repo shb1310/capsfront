@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/button.css';
-import menu from '../menu.svg';
-import search from '../search.svg';
+import menu from '../images/menu.svg';
+import search from '../images/search.svg';
 import {Link} from 'react-router-dom';
 import '../css/Search.css'
 import Nav from '../Nav';

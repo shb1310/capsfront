@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './css/Home.css';
-import logo from './logo.svg';
+import logo from './images/logo.svg';
 import {Link} from 'react-router-dom';
 import Modal from './Modal';
 
