@@ -8,7 +8,8 @@ import '../css/Loc.css'
 import '../css/Search.css';
 import { Map,MapMarker,RoadviewMarker,Roadview} from 'react-kakao-maps-sdk';
 import axios from 'axios';
-import KeyMap from './KeyMap'
+import KeyMap from './KeyMap';
+import Addr from './Addr';
 import LocButton from './LocButton';
 
 

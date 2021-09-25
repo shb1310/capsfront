@@ -7,12 +7,12 @@ import '../css/list.css';
 import '../css/map.css';
 import '../css/Loc.css'
 import '../css/Search.css';
-import ListButton from './ListButton';
+import ListGButton from './ListGButton';
 import axios from 'axios';
 import InfoMap from './InfoMap';
 import Modal  from './Modal';
 
-function List(props) {
+function ListG(props) {
   console.log('List');
   const [ modalOpen, setModalOpen ] = useState(false);
   
@@ -37,13 +37,25 @@ function List(props) {
 //  const request = axios
 var urls = ["http://127.0.0.1:8000/testapp/ansimapi"
 ,"http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi"]
+const [lat, lng] = useState([]);	
+if (navigator.geolocation) {
+  // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+  navigator.geolocation.getCurrentPosition(function(pos) {
+    const lat = pos.coords.latitude;
+    const lon = pos.coords.longitude;
+    //alert("현재 위치는 : " + lat + ", "+ lon);
+    console.log("위도:"+lat+","+"경도:"+lon);
+});
+}
 
 
 var parameterstest = {
-	options : 'dw',
-	wardname: '',
-	workplacename: null,
-	categorydetail: key
+	options: 'g',
+	lat:37.60372599769183,
+  lon: 126.95473701584243, 
+  range:0.05,
+	categorydetail: key,
+
 }
  	useEffect(()=>
 //  const getData = ()=>
@@ -59,7 +71,7 @@ var parameterstest = {
   //window.location.replace("/list")
   return (
     <div id="List">
-    <ListButton/>
+    <ListGButton/>
     <br /><br />
     <table class="result">
         <thead>
@@ -107,4 +119,4 @@ var parameterstest = {
   );
 }
 
-export default List;
+export default ListG;

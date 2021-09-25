@@ -22,7 +22,7 @@ function LocGButton() {
           <Link to='/locetg'>   <button id="기타_음식점업" value="기타 음식점업">기타 음식점업</button></Link>       
          </div>
           <div class="search">{/* 검색창에 대한 div*/}
-          <Link to='/list'><img src={menu} className="menu" alt="menu"/></Link>{/* loc<->list로 서로 바꿔주는 이미지, Link로 연결*/}
+          <Link to='/listg'><img src={menu} className="menu" alt="menu"/></Link>{/* loc<->list로 서로 바꿔주는 이미지, Link로 연결*/}
           <input className="inputtxt" placeholder="검색어를 입력하세요"/>
         &nbsp;   &nbsp;
             <Link to='/search'> <img src={search} className="searchIcon" alt="search"/></Link>

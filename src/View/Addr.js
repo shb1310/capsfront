@@ -1,3 +1,4 @@
+/*global kakao*/ 
 import React,{useState,useEffect} from 'react';
 import '../App.css';
 import '../css/button.css';
@@ -35,7 +36,7 @@ var urls = ["http://127.0.0.1:8000/testapp/ansimapi"
 
 const parameterstest = {
 	options : 'dw',
-	wardname: '',
+	wardname: '은평구',
 	workplacename: null,
 	categorydetail: key,
   lat:null,
@@ -50,7 +51,45 @@ const parameterstest = {
   	.then(res => {setInfo(res.data); console.log(res.data)})
   	.catch(err => console.log(err))
   },{deps:[]})
+  const [markers, setMarkers] = useState([])
+const [map, setMap] = useState()
+  useEffect(() => {
+    if (!map) return
+    const ps = new kakao.maps.services.Places()
+    {
+      info.map(item => {
+    ps.keywordSearch("안심식당", (item, status, _pagination) => {
+      if (status === kakao.maps.services.Status.OK) {
+        // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+        // LatLngBounds 객체에 좌표를 추가합니다
+        const bounds = new kakao.maps.LatLngBounds()
+        let markers = []
+     
+        
+        for (var i = 0; i < item.length; i++) {
+          // @ts-ignore
+          markers.push({
+            position: {
+              lat: item[i].lat,
+              lng: item[i].lon,
+            },
+            content: item[i].address_name ,
+            name: item[i].place_name,
+          })
+          // @ts-ignore
+          bounds.extend(new kakao.maps.LatLng(item[i].y, item[i].x))
+        }
+        
+       
+        setMarkers(markers)
   
+        // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+        map.setBounds(bounds)
+      }
+    }) })			
+  }
+
+  }, [map])
   const [toggle, setToggle] = useState("map");
 
   const placePosition = {
@@ -62,7 +101,7 @@ const parameterstest = {
   return (
     
     <div id="Loc">
-      <LocButton />{/* 버튼 불러오기 */}
+  
         <br /><br />
    
    <div style={{ width: "100%", height: "600px", position: "relative" }}>
@@ -74,12 +113,20 @@ const parameterstest = {
          width: "100%",
          height: "100%",
        }}
-       level={10}
+       level={5}
+       onCreate={setMap}
      >
       
-         
-       <MapMarker position={placePosition} />
-       
+      {markers.map((marker) => (   
+       <MapMarker /*position={placePosition}*/ 
+       key={`marker-${marker.content}-${marker.position.lat},${marker.position.lng}`}
+       position={marker.position}
+       onClick={() => setInfo(marker)} >
+       {info &&info.content === marker.content && (
+        <div style={{color:"#000", width:"400px",height:"30px"}}>{marker.name}:{marker.content}</div>
+      )}
+      </MapMarker>
+       ))}
        {toggle === "map" && (
          <input
            style={{
