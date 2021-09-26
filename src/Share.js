@@ -1,4 +1,3 @@
-import shareImg from './images/share.svg';
 import './css/share.css';
 
 const Share = ( props ) => {
@@ -28,8 +27,7 @@ const Share = ( props ) => {
         <button id="shareBtn" onClick={Share} style={{marginTop:"300px",
           width:"600px",height:"200px",backgroundColor: "black",color:"white",
           fontFamily:"fantasy",fontSize:"50px",border: "solid 2px grey",
-          borderRadius: "50px",zindex:"99"}}>
-         {/*} <img id="shareImg" src={shareImg} />*/}공유하기</button>
+          borderRadius: "50px",zindex:"99"}}>공유하기</button>
     )
 }
 

@@ -6,9 +6,9 @@ import {Link} from 'react-router-dom';
 import '../css/Search.css';
 import Nav from '../Nav';
 
-function ListButton() {
+function ListGButton() {
 
-	console.log('ListButton');
+	console.log('ListGButton');
 
 	const url = "/listg";
     return(
@@ -36,4 +36,4 @@ function ListButton() {
     );
 }
 
-export default ListButton;
+export default ListGButton;

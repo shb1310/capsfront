@@ -6,7 +6,7 @@ import '../css/list.css';
 import '../css/map.css';
 import '../css/Loc.css'
 import '../css/Search.css';
-import MapG from './MapG';
+
 import KeyMapG from './KeyMapG';
 import LocGButton from './LocGButton';
 

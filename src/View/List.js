@@ -41,7 +41,7 @@ var urls = ["http://127.0.0.1:8000/testapp/ansimapi"
 
 var parameterstest = {
 	options : 'dw',
-	wardname: '은평구',
+	wardname: '',
 	workplacename: null,
 	categorydetail: key
 }
@@ -69,6 +69,7 @@ var parameterstest = {
             <th class="address1">주소</th>  
             <th class="address2">주소 상세</th>  
             <th class="number">전화번호</th> 
+            <th class="category">카테고리</th> 
           </tr>
         </thead>
         <tbody>
@@ -77,7 +78,8 @@ var parameterstest = {
             <td class="name">key</td>
             <td class="address1">{key}</td>  
             <td class="address2"></td>  
-            <td class="name"></td>
+            <td class="tel"></td>
+            <td class="category"></td>
         </tr>
         <React.Fragment>
           {
@@ -88,6 +90,7 @@ var parameterstest = {
                  	<td class="address1">{item. address1}</td>
                    <td class="address2">{item. address2}</td>
                    <td class="number">{item.tel}</td>
+                   <td class="category">{item.categorydetail}</td>
                    <Modal open={ modalOpen } close={ closeModal } header="정보">
                  <InfoMap/>
             이름:{item.workplacename}<br/>

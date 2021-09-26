@@ -68,7 +68,7 @@ return (
         onClick={() => setInfo(marker)}
       >
         {info &&info.content === marker.content && (
-          <div style={{color:"#000", width:"350px",height:"30px"}}>{marker.name}:{marker.content}</div>
+          <div id="wrap" style={{color:"#000", width:"350px",height:"30px"}}>{marker.name}:{marker.content}</div>
         )}
       </MapMarker>
     ))}
