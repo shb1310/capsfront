@@ -1,4 +1,3 @@
-/*global kakao*/ 
 import React,{useState,useEffect} from 'react';
 import '../App.css';
 import '../css/button.css';
@@ -87,14 +86,14 @@ var parameterstest = {
           		<tr> 
            			<td class="id" key={item.ansimseq}>{item.ansimseq}</td>
           				<td class="name"><div onClick={openModal}>{item.workplacename}</div></td>
-                 	<td class="address1">{item. address1}</td>
-                   <td class="address2">{item. address2}</td>
+                 	<td class="address1">{item.address1}</td>
+                   <td class="address2">{item.address2}</td>
                    <td class="number">{item.tel}</td>
                    <td class="category">{item.categorydetail}</td>
                    <Modal open={ modalOpen } close={ closeModal } header="정보">
                  <InfoMap/>
             이름:{item.workplacename}<br/>
-            주소:{item. address1}<br/>
+            주소:{item.address1}<br/>
             전화번호:{item.tel}
      </Modal>
                  </tr>

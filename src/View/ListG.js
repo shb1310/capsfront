@@ -66,7 +66,8 @@ var parameterstest = {
   })
   	.then(res => setInfo(res.data))
   	.catch(err => console.log(err))
-  },{deps:[]})
+  },
+  {deps:[]});
   
   //window.location.replace("/list")
   return (

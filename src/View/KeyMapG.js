@@ -7,7 +7,7 @@ import '../css/list.css';
 import '../css/map.css';
 import '../css/Loc.css'
 import '../css/Search.css';
-import { Map,MapMarker,RoadviewMarker,Roadview} from 'react-kakao-maps-sdk';
+import { Map,MapMarker} from 'react-kakao-maps-sdk';
 
 
 function KeyMapG(props) {

@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React from 'react';
 import '../App.css';
 import '../css/button.css';
 import '../css/logoF.css';
@@ -7,7 +7,6 @@ import '../css/map.css';
 import '../css/Loc.css'
 import '../css/Search.css';
 
-import axios from 'axios';
 import KeyMap from './KeyMap';
 
 import LocButton from './LocButton';
