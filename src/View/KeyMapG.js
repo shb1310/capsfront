@@ -89,6 +89,7 @@ useEffect(() => {
 
 return (
   <Map // 로드뷰를 표시할 Container
+  id="Map"
     center={state.center}
     style={{
       width: "100%",

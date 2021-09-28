@@ -2,7 +2,7 @@ import React , { useState }from 'react';
 import './css/button.css';
 import menu from './images/menu.svg';
 import search from './images/search.svg';
-import './css/Search.css';
+import './css/SearchBox.css';
 import Nav from './Nav';
 import {Link} from 'react-router-dom';
 import MapContainer from './MapContainer';
@@ -30,7 +30,7 @@ function Search() {
          
     <form className="inputForm" onSubmit={handleSubmit}>
     <Link to='/loc'> <img src={menu} className="menu" alt="menu"/></Link>
-        <input className="inputtxt" placeholder="검색어를 입력하세요" onChange={onChange} value={InputText} s/>
+        <input className="inputtxt" placeholder="검색어를 입력하세요" onChange={onChange} value={InputText} />
         &nbsp;   &nbsp;
         <button id="searchBox" type="submit" style={{width:"100px"}}><img src={search} className="searchIcon" alt="search" /></button>
 

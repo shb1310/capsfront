@@ -84,7 +84,7 @@ const MapContainer = ({ searchPlace }) => {
   return (
     <div>
       <div
-        id="myMap"
+        id="myMap" 
         style={{
           width: '1500px',
           height: '500px',

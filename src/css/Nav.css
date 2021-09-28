@@ -6,7 +6,7 @@
 #menuBox:checked ~ * { transform: translate3d(200px, 0, 0); }
 #menuBox ~ label {
   font-size: 30px;
-  top: -16px; left: 8px;
+  top: 5px; left: 8px;
   cursor: pointer;
   z-index: 1;
 }

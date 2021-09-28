@@ -26,23 +26,28 @@
     border: none;
     outline:none;
   }
+  
   @media (max-width:600px){ /*가로 너비가 600px 이하일 때 아래 스타일 적용*/
     .menu{
       width:40px;
       height:40px;
-      margin-left:5px; 
+      margin-left:-1px; 
       margin-right:5px;
     }
     .inputtxt {
-        width: 230px;
+        width: 200px;
         border-radius: 20px;
         border: 1px solid #bbb;
-        padding: 10px 12px;
         padding-top: 40px; 
 
       }
     .searchIcon{
       width: 40px;
       height:40px;
+      margin-left:-60px; 
+    }
+    #myMap{
+      width:400px;
+      height:500px;
     }
 }

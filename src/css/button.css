@@ -26,32 +26,51 @@
    
 }
 @media (max-width:600px){ /*가로 너비가 600px 이하일 때 아래 스타일 적용*/
-    #한식, #중식, #일식,#서양식{
+    #한식, #중식, #일식{
         background-color: white;
         color:black;
         border-color: black;
-        width: 60px;
+        width: 65px;
         height:30px;
         font-size: 20px;
         border: solid 2px grey;
         border-radius: 12px;
+        margin-left: -5px;
     }
-   
-    #기타외국식,#기타_음식점업{
+    #서양식{
         background-color: white;
         color:black;
         border-color: black;
-        width: 110px;
+        width: 80px;
         height:30px;
-        font-size:17px;
+        font-size: 20px;
+        border: solid 2px grey;
+        border-radius: 12px;
+        margin-left: -5px;
+    }
+   
+    #기타외국식{
+        background-color: white;
+        color:black;
+        border-color: black;
+        width: 130px;
+        height:40px;
+        font-size:20px;
         border: solid 2px grey;
         border-radius: 12px;
         margin:10px;
     }
-    #한식{
-        margin-left:-60px;
+    #기타_음식점업{
+        background-color: white;
+        color:black;
+        border-color: black;
+        width: 150px;
+        height: 40px;
+        font-size:20px;
+        border: solid 2px grey;
+        border-radius: 12px;
+        margin:10px;
     }
-    #서양식{
-        margin-left:-50px;
-    }
+   
+   
    }

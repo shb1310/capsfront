@@ -19,3 +19,22 @@
     background-color: white;
     color:black;
 }
+@media (max-width:600px){ /*가로 너비가 600px 이하일 때 아래 스타일 적용*/
+    #shareBtn{
+        margin-top:300px;
+        width:300px;
+        height: 200px;
+        background-color: black;
+        color:white;
+        font-family:fantasy;
+        font-size:50px;
+        border: solid 2px grey;
+        border-radius: 50px;
+        z-index:99;
+    }
+   
+    #shareBtn:hover{
+        background-color: white;
+        color:black;
+    }
+}
