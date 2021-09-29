@@ -44,7 +44,7 @@ var parameterstest = {
 	options:'dg',
 	  lat:37.60372599769183,
   	lon: 126.95473701584243, 
-  	range:0.05,
+  	range:0.1,
   	categorydetail: key,
 }
 
