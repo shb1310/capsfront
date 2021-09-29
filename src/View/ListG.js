@@ -38,25 +38,26 @@ function ListG(props) {
 var urls = ["http://127.0.0.1:8000/testapp/ansimapi"
 ,"http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi"]
 	
-/*if (navigator.geolocation) {
-  // GeoLocation을 이용해서 접속 위치를 얻어옵니다
-  navigator.geolocation.getCurrentPosition(function(pos) {
-    const lat = pos.coords.latitude;
-    const lon = pos.coords.longitude;
-    //alert("현재 위치는 : " + lat + ", "+ lon);
-    console.log("위도:"+lat+","+"경도:"+lon);
-});
-}*/
 
 
 var parameterstest = {
 	options:'dg',
-	lat:37.60372599769183,
-  lon: 126.95473701584243, 
-  range:0.05,
-  categorydetail: key,
-
+	  lat:37.60372599769183,
+  	lon: 126.95473701584243, 
+  	range:0.05,
+  	categorydetail: key,
 }
+
+if (navigator.geolocation) {
+  // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+  	navigator.geolocation.getCurrentPosition(function(pos) {
+    parameterstest["lat"] = pos.coords.latitude;
+    parameterstest["lon"] = pos.coords.longitude;
+    //alert("현재 위치는 : " + lat + ", "+ lon);
+ 
+});
+}
+
  	useEffect(()=>
 //  const getData = ()=>
 	{

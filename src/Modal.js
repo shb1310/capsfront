@@ -21,7 +21,7 @@ const Modal = ( props ) => {
                         {props.children}
                     </main>
                     <footer>
-                    <Link to="/loc"><button className="agree" onClick={agree}> agree </button></Link> &nbsp;
+                    <Link to="/list"><button className="agree" onClick={agree}> agree </button></Link> &nbsp;
                         <button className="close" onClick={close}> close </button>
                     </footer>
                 </section>
