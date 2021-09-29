@@ -4,12 +4,12 @@ import Nav from '../Nav';
 import mapBtn from '../images/map.svg';
 import {Link} from 'react-router-dom';
 
-function ListP() {
-  console.log('ListP');
+function ListPG() {
+  console.log('ListPG');
   return (
-    <div id="ListP">
+    <div id="ListPG">
     <Nav/>
-    <Link to='/locp'><img src={mapBtn} id="mapBtn" style={{width:"50px",height:"50px"}} alt="mapBtn"/></Link>
+    <Link to='/locpg'><img src={mapBtn} id="mapBtn" style={{width:"50px",height:"50px"}} alt="mapBtn"/></Link>
     <br /><br />
     <table className="resultP"> {/*공영주차장에 대한 리스트->추후 백에서 받아온 데이터로 변경 예정 -> 지금은 예시*/}
         <thead>
@@ -104,4 +104,4 @@ function ListP() {
   );
 }
 
-export default ListP;
+export default ListPG;

@@ -13,7 +13,7 @@ const Modal = ( props ) => {
         selBox.style.left = '0';
         selBox.style.top = '0';
         selBox.style.opacity = '0';
-        selBox.value ="Copy";
+        selBox.value ="훼베트남쌀국수";
         
         document.body.appendChild(selBox);
         selBox.focus();

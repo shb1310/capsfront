@@ -4,10 +4,12 @@ import './css/logoF.css';
 import './css/Home.css';
 import Loc from './View/Loc';
 import LocP from './View/LocP';
+import LocPG from './View/LocPG';
 import LocG from './View/LocG';
 import ListG from './View/ListG';
 import List from './View/List';
 import ListP from './View/ListP';
+import ListPG from './View/ListPG';
 import Home from'./Home';
 import Search from'./Search';
 import Share from './Share';
@@ -25,10 +27,12 @@ const App=()=> {
      <Route exact path="/" component={Home} />
      <Route path="/loc" component={Loc} />
      <Route path="/locp" component={LocP} />
+     <Route path="/locpg" component={LocPG} />
      <Route path="/locg" component={LocG} />
      <Route path="/list" component={List} />
      <Route path="/listg" component={ListG} />
      <Route path="/listp" component={ListP} />
+     <Route path="/listpg" component={ListPG} />
      <Route path="/search" component={Search} />
      <Route path="/share" component={Share} />
 
