@@ -1,3 +1,4 @@
+
 import './css/share.css';
 
 const Share = ( props ) => {
@@ -24,7 +25,10 @@ const Share = ( props ) => {
           }
     })}
     return (
+      <>
         <button id="shareBtn" onClick={Share} >공유하기</button>
+        <button id="returnBtn" onClick={Share} >되돌리기</button>
+        </>
     )
 }
 

@@ -90,13 +90,13 @@ var parameterstest = {
                    <td class="address2">{item.address2}</td>
                    <td class="number">{item.tel}</td>
                    <td class="category">{item.categorydetail}</td>
-                   <Modal open={ modalOpen } close={ closeModal } header="정보">
-                 <InfoMap/>
-            이름:{item.workplacename}<br/>
-            주소:{item.address1}<br/>
-            전화번호:{item.tel}
-     </Modal>
-                 </tr>
+                   <Modal id={item.ansimseq} open={ modalOpen } close={ closeModal } header="정보">
+                   <InfoMap/>
+                  이름:{item.workplacename}<br/>
+                  주소:{item.address1}<br/>
+                  전화번호:{item.tel}
+                </Modal>
+            </tr>
                     )
           	})			
 		}
