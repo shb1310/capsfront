@@ -18,43 +18,24 @@ class Main extends Component {
 		
 	constructor(props) {
 		super(props);
-		this.state = {loc:false,parameters:{options:"w",wardname:"은평구"},info:{}};
+		this.state = {loc:false,parameters:{options:"w",wardname:"은평구"},};
 		this.setCd = this.setCd.bind(this);
 		this.setLoc = this.setLoc.bind(this);
 		this.getData = this.getData.bind(this);
 		this.categoryOnClick = this.categoryOnClick.bind(this);
-	
+		this.event = false
 		this.urls = ["http://127.0.0.1:8000/testapp/ansimapi", "http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi"]
 	}
-
-
-/*	componentDidUpdate(prevProps,prevState) {		
-		if(prevState.parameters.update){
-			this.getdata = axios.get(this.urls[0], {
-    		params: this.state.parameters
-  			})
-  			.then(res => this.setState(prevState =>({			
-				info:{
-					...prevState.parameters,
-					data:res.data}
-				})))
-  			.catch(err => console.log(err))
-			
-			this.updateOff()
-		}	
-	}	*/	
 	
 	getData() {		
+		if(this.isEvent()){
 			this.getdata = axios.get(this.urls[1], {
     		params: this.state.parameters
   			})
-  			.then(res => this.setState(prevState =>({			
-				info:{
-					...prevState.parameters,
-					data:res.data}
-				})))
+  			.then(res => this.setState({info:res.data}))
   			.catch(err => console.log(err))
-			
+		this.setEvent()
+		}	
 	}
 	
 	
@@ -97,9 +78,18 @@ class Main extends Component {
 		this.setState(prevState =>({loc:!prevState.loc}))
 		}
 
+	
+	isEvent() {		
+		return this.event
+	}
+	
+	setEvent() {
+		this.event = !this.event
+	}
+	
 	categoryOnClick(cd) {
 		this.setCd(cd)
-		this.getData()
+		this.setEvent()
 	}
 	
 	render()
@@ -130,10 +120,7 @@ class Main extends Component {
             <Link to='/search'> <img src={search} className="searchIcon" alt="search"/></Link> {/*검색->돋보기 모양 이미지->search 페이지로 연결 */}
            </div>
 			<div id = "test">
-			<h1>op:{this.state.parameters.options}</h1>
-			<h1>cd:{this.state.parameters.categorydetail}</h1>
-			<button onClick = {() => this.getData()}>getdata</button>
-
+			{this.getData()}
 			{this.state.loc?<Loc state={this.state}/>:<List state={this.state}/>}
 			</div>
 			<Footer/>

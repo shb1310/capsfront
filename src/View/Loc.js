@@ -18,8 +18,8 @@ function Loc(props) {
   //  const getData = ()=>
   {
     {true&&
-      props.state.info.data === undefined?<br/>:
-            props.state.info.data.map((item) => {
+      props.state.info === undefined?<br/>:
+            props.state.info.map((item) => {
     if (!map) return
 
     const ps = new kakao.maps.services.Places()

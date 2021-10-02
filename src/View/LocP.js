@@ -3,19 +3,20 @@
 import React,{useState,useEffect} from 'react';
 import { Map,MapMarker} from 'react-kakao-maps-sdk';
 function Locp(){
-    const [markers, setMarkers] = useState([
+/*    const [markers, setMarkers] = useState([
       {
         position: {
           lat: 33.450701,
           lng: 126.570667,
         },
       },
-    ])
+    ])*/
   
     const [isVisible, setIsVisible] = useState(true)
   
     return (
-      <>
+		<div/>
+ /*     <>
         <Map // 지도를 표시할 Container
           center={{
             // 지도의 중심좌표
@@ -57,7 +58,7 @@ function Locp(){
           <button onClick={() => setIsVisible(false)}>마커 숨기기</button>
           <button onClick={() => setIsVisible(true)}>마커 보이기</button>
         </div>
-      </>
+      </>*/
     )
   }
   export default Locp;
