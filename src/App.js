@@ -8,7 +8,7 @@ import List from './View/List';
 import Home from'./Home';
 import Search from'./Search';
 import Share from './Share';
-import Locp from './View/Locp';
+import Locp from './View/LocP';
 
 
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';

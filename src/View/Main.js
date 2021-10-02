@@ -25,23 +25,6 @@ class Main extends Component {
 		this.event = false
 		this.urls = ["http://127.0.0.1:8000/testapp/ansimapi", "http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi"]
 	}
-
-
-/*	componentDidUpdate(prevProps,prevState) {		
-		if(prevState.parameters.update){
-			this.getdata = axios.get(this.urls[0], {
-    		params: this.state.parameters
-  			})
-  			.then(res => this.setState(prevState =>({			
-				info:{
-					...prevState.parameters,
-					data:res.data}
-				})))
-  			.catch(err => console.log(err))
-			
-			this.updateOff()
-		}	
-	}	*/	
 	
 	
 	getData() {		
