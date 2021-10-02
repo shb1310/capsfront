@@ -1,7 +1,6 @@
 import '../css/button.css';
 import '../css/Search.css';
 import React,{useState,useEffect,Component} from 'react';
-import axios from 'axios';
 import InfoMap from './InfoMap';
 import Modal  from './Modal';
 
@@ -22,15 +21,6 @@ console.log('List');
       
   }
 
-  var key;
-
-  if (props.state === undefined){ 	
-	key = '일식';
-}
-  else{
-	key =  props.state.parameters.categorydetail;
-}
-
   return (
     <div id="List">
     <br /><br />
@@ -45,17 +35,17 @@ console.log('List');
           </tr>
         </thead>
         <tbody>
-        <tr >
+       {/* <tr >
             <td>{0.}</td>
             <td class="name">key</td>
-            <td class="address1">{key}</td>  
+            <td class="address1">{props.state.parameters.categorydetail}</td>  
             <td class="address2"></td>  
             <td class="name"></td>
-        </tr>
+       </tr>*/}
         <React.Fragment>
           {
-		      	props.state.info.data === undefined?<br/>:
-          	props.state.info.data.map(item => {return(
+		      	props.state.info === undefined?<br/>:
+          	props.state.info.map(item => {return(
           		<tr> 
            			<td class="id" key={item.ansimseq}>{item.ansimseq}</td>
           				<td class="name"><div onClick={openModal}>{item.workplacename}</div></td>

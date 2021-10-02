@@ -1,6 +1,5 @@
-/*global kakao*/  
 /*마커 숨기기/보이기 기능 */
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import { Map,MapMarker} from 'react-kakao-maps-sdk';
 function Locp(){
     const [markers, setMarkers] = useState([

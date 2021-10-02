@@ -1,35 +1,12 @@
 import React from 'react';
 import "../css/modal.css";
 import {Link} from 'react-router-dom';
-
-
+import '../css/share.css';
+import Share from '../Share'
 const Modal = ( props ) => {
     // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
     const { open, close, header } = props;
-    function Share(){
-        var shareBtn =document.getElementById("shareBtn");
-      if(shareBtn){
-        shareBtn.addEventListener("click",function(){
     
-            var Title="공유하기";
-            var Text="안심식당사이트입니다.";
-            var shareURL=" "       
-    
-            if (navigator.share) {
-                navigator.share({
-                  title: Title,
-                  text:Text,
-                  url: shareURL,
-                }).then(() => {
-                  console.log('Sharing Success!!');
-                })
-                .catch((error)=>console.log('Error',error));
-              } else {
-                // fallback
-                alert('공유가 실패되었습니다!');
-              }
-        })}
-    }
     function copy() {
        
         const selBox = document.createElement('textarea');
@@ -60,8 +37,8 @@ const Modal = ( props ) => {
                         {props.children}
                     </main>
                     <footer>
-                    <button className="share" onClick={()=>Share}> 공유하기 </button> &nbsp;
-                        <button className="close" onClick={copy}> 복사하기 </button>
+                        <Link to="/share"> <button className="share" onClick={()=>Share} >공유하기</button></Link> &nbsp;
+                        <button className="copy" onClick={copy}> 복사하기 </button>
 
                     </footer>
                 </section>
