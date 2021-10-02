@@ -21,7 +21,7 @@ const Modal = ( props ) => {
                         {props.children}
                     </main>
                     <footer>
-                    <Link to="/list"><button className="agree" onClick={agree}> 사용하기 </button></Link> &nbsp;
+                    <Link to="/main"><button className="agree" onClick={agree}> 사용하기 </button></Link> &nbsp;
                         <button className="close" onClick={close}> 나가기 </button>
                     </footer>
                 </section>
