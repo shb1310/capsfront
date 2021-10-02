@@ -58,7 +58,7 @@ console.log('List');
           	props.state.info.data.map(item => {return(
           		<tr> 
            			<td class="id" key={item.ansimseq}>{item.ansimseq}</td>
-          				<td class="name">{item.workplacename}</td>
+          				<td class="name"><div onClick={openModal}>{item.workplacename}</div></td>
                  	<td class="address1">{item. address1}</td>
                    <td class="address2">{item. address2}</td>
                    <td class="number">{item.tel}</td>
