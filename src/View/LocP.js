@@ -1,26 +1,63 @@
-import React from 'react';
-import '../css/map.css';
-import '../css/Loc.css'
-import '../css/Search.css';
-import mapBtn from '../images/map.svg';
-import {Link} from 'react-router-dom';
-import KeyMap from './KeyMap';
-import Nav from '../Nav';
-
-
-
-function LocP() {
-  console.log('LocP');
-  return (
-    <div id="LocP">
-          <Nav/>
-      <Link to='/listp'><img src={mapBtn} id="mapBtn" style={{width:"50px",height:"50px"}} alt="mapBtn"/></Link>
-        <br /><br />
-       {/* <img src={map} className="map" alt="map"/>
-        공영주차장 지도 나타냄-> 지금은 이미지 이지만, 추후 지도 api로 변경 예정(7/29) */}
-        <KeyMap />
-    </div>
-  );
-}
-
-export default LocP;
+/*마커 숨기기/보이기 기능 */
+import React,{useState} from 'react';
+import { Map,MapMarker} from 'react-kakao-maps-sdk';
+function Locp(){
+/*    const [markers, setMarkers] = useState([
+      {
+        position: {
+          lat: 33.450701,
+          lng: 126.570667,
+        },
+      },
+    ])*/
+  
+    const [isVisible, setIsVisible] = useState(true)
+  
+    return (
+		<div/>
+ /*     <>
+        <Map // 지도를 표시할 Container
+          center={{
+            // 지도의 중심좌표
+            lat: 33.450701,
+            lng: 126.570667,
+          }}
+          style={{
+            // 지도의 크기
+            width: "100%",
+            height: "450px",
+          }}
+          level={3} // 지도의 확대 레벨
+          onClick={(_target, mouseEvent) => {
+            setMarkers([
+              ...markers,
+              {
+                position: {
+                  lat: mouseEvent.latLng.getLat(),
+                  lng: mouseEvent.latLng.getLng(),
+                },
+              },
+            ])
+          }}
+        >
+          {isVisible &&
+            markers.map((marker, index) => (
+              <MapMarker
+                key={`${marker.position}-${index}`}
+                position={marker.position} // 마커를 표시할 위치
+              />
+            ))}
+        </Map>
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+          }}
+        >
+          <button onClick={() => setIsVisible(false)}>마커 숨기기</button>
+          <button onClick={() => setIsVisible(true)}>마커 보이기</button>
+        </div>
+      </>*/
+    )
+  }
+  export default Locp;

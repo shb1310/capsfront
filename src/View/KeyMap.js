@@ -1,18 +1,46 @@
 /*global kakao*/ 
 import React,{useState,useEffect} from 'react';
-import '../App.css';
-import '../css/button.css';
-import '../css/logoF.css';
-import '../css/list.css';
-import '../css/map.css';
-import '../css/Loc.css'
-import '../css/Search.css';
 import { Map,MapMarker} from 'react-kakao-maps-sdk';
+import axios from 'axios';
 
 function KeyMap(props) {
 const [info, setInfo] = useState()
 const [markers, setMarkers] = useState([])
 const [map, setMap] = useState()
+var key;
+
+if (props.state === undefined){ 	
+key = "unkey";
+}
+else{
+key =  props.state['key'];
+}
+  
+//  const request = axios
+var urls = ["http://127.0.0.1:8000/testapp/ansimapi"
+,"http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi"]
+
+
+var parameterstest = {
+options : 'dg',
+lat:0,
+lon:0,
+range:0.05,
+categorydetail: key
+}
+ useEffect(()=>
+//  const getData = ()=>
+{
+ 
+  axios.get(urls[1], {
+    params: parameterstest 
+})
+  .then(res => {setInfo(res.data);
+  console.log(res);
+  })
+  .catch(err => console.log(err))
+},[])
+
 
 useEffect(() => {
   if (!map) return
