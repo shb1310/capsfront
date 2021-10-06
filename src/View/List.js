@@ -1,15 +1,13 @@
 import '../css/button.css';
 import '../css/Search.css';
-import React,{useState,useEffect,Component} from 'react';
+import React,{useState} from 'react';
 import InfoMap from './InfoMap';
 import Modal  from './Modal';
 
 
-
 function List(props){	
 //	<h1>cd:{this.state.parameters.categorydetail=== undefined?"undefined":this.state.parameters.categorydetail}</h1>
-console.log('List');
-console.log('List');
+
   const [ modalOpen, setModalOpen ] = useState(false);
   
   const openModal = () => {
@@ -20,8 +18,9 @@ console.log('List');
       setModalOpen(false);
       
   }
-
+console.log('List');
   return (
+    
     <div id="List">
     <br /><br />
     <table class="result">
@@ -49,8 +48,8 @@ console.log('List');
           		<tr> 
            			<td class="id" key={item.ansimseq}>{item.ansimseq}</td>
           				<td class="name"><div onClick={openModal}>{item.workplacename}</div></td>
-                 	<td class="address1">{item. address1}</td>
-                   <td class="address2">{item. address2}</td>
+                 	<td class="address1">{item.address1}</td>
+                   <td class="address2">{item.address2}</td>
                    <td class="number">{item.tel}</td>
                    <Modal id={item.ansimseq} open={ modalOpen } close={ closeModal } header="정보">
                    <InfoMap/>
