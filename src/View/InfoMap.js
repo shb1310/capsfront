@@ -1,57 +1,44 @@
-import React from 'react';
-import { Map,MapMarker } from 'react-kakao-maps-sdk';
-import '../css/InfoMap.css';
+/*global kakao*/
+import React,{useEffect} from 'react';
 
 
-function InfoMap(props){
- /* var key;
-
-  if (props.location.state === undefined){ 	
-	key = "unkey";
-}
-  else{
-	key =  props.location.state['key'];
-}
-//  var deps;
-  const [info, setInfo] = useState([]);	  
-//  const request = axios
- 	useEffect(()=>
-//  const getData = ()=>
-	{
+const InfoMap=()=>{
+  useEffect(()=>
+  {
    
-	axios.get("http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi", {
-	params: {
-		prid: key,
-		pname: 'pname'
-	}
-  
-  })
-  	.then(res => setInfo(res.data))
-  	.catch(err => console.log(err))
-  },{deps:[]})*/
-    return (
-      <Map // 지도를 표시할 Container
-        center={{
-          // 지도의 중심좌표
-          lat: 33.450701,
-          lng: 126.570667,
-        }}
-        style={{
-          // 지도의 크기
-          width: "100%",
-          height: "450px",
-        }}
-        level={4} // 지도의 확대 레벨
-      >
-        <MapMarker // 마커를 생성합니다
-          position={{
-            // 마커가 표시될 위치입니다
-            lat: 33.450701,
-            lng: 126.570667,
-          }}
-        />
-      </Map>
-    )
+    var mapContainer = document.getElementById('infomap'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+var markerPosition,marker;
+/*<React.Fragment>
+{
+     props.state.info === undefined?<br/>:
+     props.state.info.map((item) => {*/
+// 마커가 표시될 위치입니다 
+ markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667); 
+// markerPosition  = new kakao.maps.LatLng(item.lat, item.lon); 
+// 마커를 생성합니다
+ marker = new kakao.maps.Marker({
+    position: markerPosition
+});
+/*
+})			
+}
+
+</React.Fragment>; */
+
+// 마커가 지도 위에 표시되도록 설정합니다
+marker.setMap(map);
+
+}, )
+return (
+    <div id="infomap" style={{width:"350px",height:"350px"}}></div> 
+)   
+
   }
 
 export default InfoMap;

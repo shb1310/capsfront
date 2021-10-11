@@ -61,7 +61,6 @@ console.log('List');
                     )
           	})			
 		}
-   
     </React.Fragment>
         </tbody>
         </table>

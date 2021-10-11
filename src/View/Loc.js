@@ -37,7 +37,7 @@ var imageSize,markerImage,marker,infowindow,coords;
    });
     
 // 마커를 클릭했을 때 마커 위에 표시할 인포윈도우를 생성합니다
- /*
+ 
 // 인포윈도우를 생성합니다
  infowindow = new kakao.maps.InfoWindow({
 content :  '<div style="width:350px;text-align:center;padding:6px 0;">'+item.workplacename+'<br/>'+item.address1+'</div>',
@@ -50,12 +50,12 @@ kakao.maps.event.addListener(marker, 'click', function() {
   infowindow.open(map, marker);  
 }
 
-          )*/
+          )
            // 인포윈도우로 장소에 대한 설명을 표시합니다
-        var infowindow = new kakao.maps.InfoWindow({
+      /*  var infowindow = new kakao.maps.InfoWindow({
             content: '<div style="width:350px;text-align:center;padding:6px 0;">'+item.workplacename+'<br/>'+item.address1+'</div>'
         });
-        infowindow.open(map, marker);
+        infowindow.open(map, marker);*/
         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
         map.setCenter(coords);
          })			

@@ -1,4 +1,4 @@
-#shareBtn{
+#shareBtn,#returnBtn{
     margin-top:300px;
     width:600px;
     height: 200px;
@@ -15,12 +15,12 @@
     height:160px;
     z-index:-1;
 }
-#shareBtn:hover{
+#shareBtn:hover,#returnBtn:hover{
     background-color: white;
     color:black;
 }
 @media (max-width:600px){ /*가로 너비가 600px 이하일 때 아래 스타일 적용*/
-    #shareBtn{
+    #shareBtn,#returnBtn{
         margin-top:300px;
         width:300px;
         height: 200px;
@@ -33,7 +33,7 @@
         z-index:99;
     }
    
-    #shareBtn:hover{
+    #shareBtn:hover,#returnBtn:hover{
         background-color: white;
         color:black;
     }

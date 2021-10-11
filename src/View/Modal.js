@@ -8,13 +8,16 @@ const Modal = ( props ) => {
     const { open, close, header } = props;
     
     function copy() {
-       
+      /*  <React.Fragment>
+        {
+             props.state.info === undefined?<br/>:
+             props.state.info.map((item) => {*/
         const selBox = document.createElement('textarea');
         selBox.style.position = 'fixed';
         selBox.style.left = '0';
         selBox.style.top = '0';
         selBox.style.opacity = '0';
-        selBox.value ="훼베트남쌀국수";
+        selBox.value ="훼베트남쌀국수"/*item.tel */;
         
         document.body.appendChild(selBox);
         selBox.focus();
@@ -22,7 +25,13 @@ const Modal = ( props ) => {
         
         document.execCommand('copy');
         document.body.removeChild(selBox);
+   /* })			
+}
+
+</React.Fragment>;*/
           }
+        
+    
     return (
         // 모달이 열릴때 openModal 클래스가 생성된다.
         <div className={ open ? 'openModal modal' : 'modal' }>
