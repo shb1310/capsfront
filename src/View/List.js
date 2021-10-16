@@ -1,14 +1,15 @@
 import '../css/button.css';
 import '../css/Search.css';
 import React,{useState} from 'react';
-import InfoMap from './InfoMap';
-import Modal  from './Modal';
+/*import InfoMap from './InfoMap';
+import Modal  from './Modal';*/
+import {Link} from 'react-router-dom';
 
 
 function List(props){	
 //	<h1>cd:{this.state.parameters.categorydetail=== undefined?"undefined":this.state.parameters.categorydetail}</h1>
 
-  const [ modalOpen, setModalOpen ] = useState(false);
+  /*const [ modalOpen, setModalOpen ] = useState(false);
   
   const openModal = () => {
       setModalOpen(true);
@@ -17,7 +18,7 @@ function List(props){
   const closeModal = () => {
       setModalOpen(false);
       
-  }
+  }*/
 console.log('List');
   return (
     
@@ -47,16 +48,22 @@ console.log('List');
           	props.state.info.map(item => {return(
           		<tr> 
            			<td class="id" key={item.ansimseq}>{item.ansimseq}</td>
-          				<td class="name"><div onClick={openModal}>{item.workplacename}</div></td>
+                 <td class="name"><Link to={{pathname:`/infopage/${item.ansimseq}`}/*,
+                 state={
+                   workplacename:item.workplacename,
+                   address1:item.address1,
+                   address2:item.address2,
+                   tel:item.tel
+                 }*/}>{item.workplacename}</Link></td>
                  	<td class="address1">{item.address1}</td>
                    <td class="address2">{item.address2}</td>
                    <td class="number">{item.tel}</td>
-                   <Modal id={item.ansimseq} open={ modalOpen } close={ closeModal } header="정보">
+                  {/* <Modal id={item.ansimseq} open={ modalOpen } close={ closeModal } header="정보">
                    <InfoMap/>
                   이름:{item.workplacename}<br/>
                   주소:{item.address1} {item.address2}<br/>
                   전화번호:{item.tel}
-                </Modal>
+            </Modal>*/}
                  </tr>
                     )
           	})			
