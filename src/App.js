@@ -11,8 +11,8 @@ import Share from './Share';
 import Locp from './View/LocP';
 import InfoPage from './View/InfoPage'
 
-
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
+
 
 
 const App=()=> {
@@ -29,7 +29,7 @@ const App=()=> {
      <Route path="/list" component={List} />
      <Route path="/search" component={Search} />
      <Route path="/share" component={Share} />
-     <Route exact path='/infopage/:ansimseq' component={InfoPage} />
+     <Route exact path='/infopage/:workplace/:address1/:address2/:tel/:lat/:lon' component={InfoPage} />
      </Switch>
     </div>
     </Router>

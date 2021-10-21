@@ -48,7 +48,7 @@ console.log('List');
           	props.state.info.map(item => {return(
           		<tr> 
            			<td class="id" key={item.ansimseq}>{item.ansimseq}</td>
-                 <td class="name"><Link to={{pathname:`/infopage/${item.ansimseq}`}/*,
+                 <td class="name"><Link to={{pathname:`/infopage/${item.workplacename}/${item.address1}/${item.address2}/${item.tel}/${item.lat}/${item.lon}`}/*,
                  state={
                    workplacename:item.workplacename,
                    address1:item.address1,
