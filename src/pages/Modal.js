@@ -1,5 +1,5 @@
 import React from 'react';
-import "./css/modal.css";
+import "../css/modal.css";
 import {Link} from 'react-router-dom';
 
 

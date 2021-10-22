@@ -9,9 +9,9 @@ import '../css/list.css';
 import '../css/Search.css';
 import List from './List';
 import Loc from './Loc';
-import Nav from '../Nav';
+import Nav from '../pages/Nav';
 import axios from 'axios';
-import Footer from '../Footer';
+import Footer from '../pages/Footer';
 
 class Main extends Component {
 		

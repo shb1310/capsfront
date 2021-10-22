@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
-import './css/logoF.css';
-import logo from './images/logo.svg';
+import '../App.css';
+import '../css/logoF.css';
+import logo from '../images/logo.svg';
 import {Link} from 'react-router-dom';
 function Nav() {
   
