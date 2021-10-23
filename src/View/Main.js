@@ -13,23 +13,32 @@ import Nav from '../pages/Nav';
 import axios from 'axios';
 import Footer from '../pages/Footer';
 
+function GeoLocation(position){
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+   
+}
+
 class Main extends Component {
 		
 	constructor(props) {
 		super(props);
-		this.state = {loc:false,parameters:{options:"w",wardname:"은평구"},};
+		this.state = {loc:false, parameters:{options:"dg",wardname:'',
+		lat:'37.60372599769183',
+		lon:'126.95473701584243', 
+		range:0.05,}};
 		this.setCd = this.setCd.bind(this);
 		this.setLoc = this.setLoc.bind(this);
 		this.getData = this.getData.bind(this);
 		this.categoryOnClick = this.categoryOnClick.bind(this);
 		this.event = false
-		this.urls = ["http://127.0.0.1:8000/testapp/ansimapi", "http://testproj-env.eba-gzdtgprf.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi"]
+		this.urls = ["http://test-proj-dev.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi"]
 	}
 	
 	
 	getData() {		
 		if(this.isEvent()){
-			this.getdata = axios.get(this.urls[1], {
+			this.getdata = axios.get(this.urls[0], {
     		params: this.state.parameters
   			})
   			.then(res => this.setState({info:res.data}))

@@ -90,20 +90,23 @@ function share(){
         
      <>
      <Nav />
-         <div id="map" style={{width:"350px",height:"350px",left:""}}></div> 
-          
+     <div id="content">
+         <div id="map" style={{width:"300px",height:"300px",position:"relative",left:"600px"}}></div> 
+          <br/>
         <div>
-         식당 이름: {match.params.workplace}<br/>
-         식당 주소:{match.params.address1}{match.params.address2}<br/>
+         식당 이름: {match.params.workplace}<br/><br/>
+         식당 주소:{match.params.address1}{match.params.address2}<br/><br/>
          식당 전화번호: {match.params.tel}</div>
-        
+         <br/><br/>
      <button className="return" onClick={goBack} 
      style={{backgroundColor:"black", color:"white"}}>리스트로 돌아가기</button>
      <button className="copy" onClick={copy} 
-     style={{backgroundColor:"black", color:"white"}}>전화번호 복사하기</button><br/>
+     style={{backgroundColor:"black", color:"white"}}>전화번호 복사하기</button><br/><br/>
   <button id="shareBtn" onClick={share} 
      style={{backgroundColor:"black", color:"white"}}>현재 페이지 주소 공유하기</button>
+     </div>
      <Footer/>
+
         </>
    
 
