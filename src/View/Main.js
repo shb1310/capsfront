@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../css/button.css';
 import search from '../images/search.svg';
+import parking from '../images/parking.png';
 import {Link} from 'react-router-dom';
 import '../App.css';
 import '../css/button.css';
@@ -13,16 +14,18 @@ import Nav from '../pages/Nav';
 import axios from 'axios';
 import Footer from '../pages/Footer';
 
-function GeoLocation(position){
-    const lat = position.coords.latitude;
-    const lon = position.coords.longitude;
-   
-}
 
 class Main extends Component {
 		
 	constructor(props) {
 		super(props);
+	/*	// GeoLocation을 이용해서 접속 위치를 얻어옵니다
+	navigator.geolocation.getCurrentPosition(function(position) {
+		
+	    const latitude = position.coords.latitude; // 위도
+		const longitude = position.coords.longitude; // 경도
+			
+	  });*/
 		this.state = {loc:false, parameters:{options:"dg",wardname:'',
 		lat:'37.60372599769183',
 		lon:'126.95473701584243', 
@@ -32,7 +35,8 @@ class Main extends Component {
 		this.getData = this.getData.bind(this);
 		this.categoryOnClick = this.categoryOnClick.bind(this);
 		this.event = false
-		this.urls = ["http://test-proj-dev.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi"]
+		this.urls = ["http://test-proj-dev.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi",
+		"http://test-proj-dev.ap-northeast-2.elasticbeanstalk.com/testapp/publicpapi"]
 	}
 	
 	
@@ -120,8 +124,9 @@ class Main extends Component {
           <button id="기타외국식" value="기타외국식" onClick = {() => this.categoryOnClick("기타외국식")}> 기타외국식</button>
           <button id="기타_음식점업" value="기타 음식점업" onClick = {() => this.categoryOnClick("기타 음식점업")}>기타 음식점업</button>   
           </div>
+
           <div className="search">{/* 검색창에 대한 div*/}
-          {/*<img src={menu} className="menu" alt="menu" /> loc<->list로 서로 바꿔주는 이미지, Link로 연결*/}
+          <Link to='/locp'> <img src={parking} className="parking" alt="parking" /> </Link> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		  <button onClick = {() => this.setLoc()} 
 		  style={{width:"100px", height:"50px", backgroundColor:"black",color:"white",fontSize:"20px", borderRadius:"20px", marginLeft:"-20px" }}>
 			  {this.state.loc?"loc":"list"}</button>

@@ -2,7 +2,7 @@ import React , { useState }from 'react';
 import '../css/button.css';
 import menu from '../images/menu.svg';
 import search from '../images/search.svg';
-import '../css/SearchBox.css';
+import '../css/Search.css';
 import Nav from './Nav';
 import {Link} from 'react-router-dom';
 import MapContainer from './MapContainer';

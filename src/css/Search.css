@@ -34,6 +34,11 @@
     border: none;
     outline:none;
   }
+  .parking{
+    width:50px;
+    height:50px;
+  
+  }
   @media (max-width:600px){ /*가로 너비가 600px 이하일 때 아래 스타일 적용*/
     .menu{
       width:40px;
