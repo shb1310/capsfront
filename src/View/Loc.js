@@ -2,11 +2,13 @@
 import React,{useEffect} from 'react';
 
 
-function Loc(props) {
+function Loc(props,{type}) {
   useEffect(()=>
   //  const getData = ()=>
   {
-    var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+    const type=props.type;
+    console.log(type);
+        var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {
         center: new kakao.maps.LatLng(37.60450771132806, 126.92827091218756), // 지도의 중심좌표
@@ -28,33 +30,28 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
            
           var  coords = new kakao.maps.LatLng(item.lat, item.lon);
     
-    console.log(item.workplacename,item.address1);
+   // console.log(item.workplacename,item.address1);
  
 // HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
-if (navigator.geolocation) {
-    
+//if (navigator.geolocation) {
+    if(type==='G'){
   // GeoLocation을 이용해서 접속 위치를 얻어옵니다
   navigator.geolocation.getCurrentPosition(function(position) {
-      
-    /*  var lat = position.coords.latitude, // 위도
-          lon = position.coords.longitude; // 경도*/
       
       var locPosition = new kakao.maps.LatLng(position.coords.latitude,position.coords.longitude), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
           message = '<div style="padding:5px;width:100px;">현재위치</div>'; // 인포윈도우에 표시될 내용입니다
       
       // 마커와 인포윈도우를 표시합니다
       displayMarkerG(locPosition, message);
-          
+      displayMarker(item);    
     });
   
 } else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
   
-  var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),    
-      message = 'geolocation을 사용할수 없어요..'
-      
-  displayMarkerG(locPosition, message);
+
+  displayMarker(item);
 }
-    displayMarker(item);
+    
 
 
 // 지도에 마커와 인포윈도우를 표시하는 함수입니다
@@ -91,10 +88,11 @@ markerPosition = locPosition; // 마커가 표시될 위치입니다
 
 // 지도에 마커를 표시하는 함수입니다
 function displayMarker(item) {
+  var Position=new kakao.maps.LatLng(item.lat, item.lon);
   // 마커를 생성하고 지도에 표시합니다
   var marker = new kakao.maps.Marker({
     map: map, // 마커를 표시할 지도
-    position: new kakao.maps.LatLng(item.lat, item.lon), // 마커를 표시할 위치
+    position: Position, // 마커를 표시할 위치
     title : item.workplacename, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
   });
 
@@ -105,7 +103,7 @@ function displayMarker(item) {
       infowindow.open(map, marker);
   });
  
-		
+  map.setCenter(Position);   
 }
 
          })			

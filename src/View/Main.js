@@ -30,7 +30,7 @@ class Main extends Component {
 	constructor(props) {
 		super(props);
 		console.log(props.match.params.key);
-		this.state = {loc:false, parameters:{options:'',wardname:'',
+		this.state = {loc:false, parameters:{options:'',wardname:'',key:this.key,
 		}};
 		this.setCd = this.setCd.bind(this);
 		this.setLoc = this.setLoc.bind(this);
@@ -129,11 +129,6 @@ class Main extends Component {
 	setEvent() {
 		this.event = !this.event
 	}
-	categoryOnClick(cd) {
-		this.setCd(cd)
-		this.getGeo()
-		this.setEvent()
-	}
 	
 	categoryOnClick(cd) {
 		
@@ -171,13 +166,13 @@ class Main extends Component {
 		  <button onClick = {() => this.setLoc()} 
 		  style={{width:"100px", height:"50px", backgroundColor:"black",color:"white",fontSize:"20px", borderRadius:"20px", marginLeft:"-20px" }}>
 			  {this.state.loc?"loc":"list"}</button>
-          <input className="inputtxt" placeholder="검색어를 입력하세요"   />
+         {/* <input className="inputtxt" placeholder="검색어를 입력하세요"   />
         &nbsp;   &nbsp;
-            <Link to='/search'> <img src={search} className="searchIcon" alt="search"/></Link> {/*검색->돋보기 모양 이미지->search 페이지로 연결 */}
+            <Link to='/search'> <img src={search} className="searchIcon" alt="search"/></Link> 검색->돋보기 모양 이미지->search 페이지로 연결 */}
            </div>
 			<div id = "test">
 			{this.getData()}
-			{this.state.loc?<Loc state={this.state}/>:<List state={this.state}/>}
+			{this.state.loc?<Loc state={this.state} type={this.key}/>:<List state={this.state}/>}
 			</div>
 			<Footer/>
         </div>
