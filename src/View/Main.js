@@ -16,30 +16,50 @@ import Footer from '../pages/Footer';
 
 
 class Main extends Component {
-		
+	
 	constructor(props) {
 		super(props);
-	/*	// GeoLocation을 이용해서 접속 위치를 얻어옵니다
-	navigator.geolocation.getCurrentPosition(function(position) {
 		
-	    const latitude = position.coords.latitude; // 위도
-		const longitude = position.coords.longitude; // 경도
-			
-	  });*/
-		this.state = {loc:false, parameters:{options:"dg",wardname:'',
-		lat:'37.60372599769183',
-		lon:'126.95473701584243', 
-		range:0.05,}};
+		this.state = {loc:false, parameters:{options:"",wardname:'',
+		}};
 		this.setCd = this.setCd.bind(this);
 		this.setLoc = this.setLoc.bind(this);
 		this.getData = this.getData.bind(this);
+		this.latitude=0.0;
+		this.longitude=0.0;
 		this.categoryOnClick = this.categoryOnClick.bind(this);
 		this.event = false
 		this.urls = ["http://test-proj-dev.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi",
 		"http://test-proj-dev.ap-northeast-2.elasticbeanstalk.com/testapp/publicpapi"]
+		
 	}
+	getGeo(){
+		var lat=0.0;
+		var lon=0.0;
+	// GeoLocation을 이용해서 접속 위치를 얻어옵니다
+	navigator.geolocation.getCurrentPosition(function(position) {
 	
-	
+	 lat = position.coords.latitude; // 위도
+	 lon = position.coords.longitude; // 경도
+	 console.log(lat,lon);
+	});
+	console.log(lat,lon);
+	this.setGeo(lat,lon);
+	}	
+	setGeo(latG,lonG){
+			this.setState(prevState =>({			
+				parameters:{
+					...prevState.parameters,
+					lat:latG,
+					lon:lonG,
+					range:0.05
+					},
+				
+				})
+			)
+			this.setOptions("g");
+		}
+		
 	getData() {		
 		if(this.isEvent()){
 			this.getdata = axios.get(this.urls[0], {
@@ -102,6 +122,7 @@ class Main extends Component {
 	
 	categoryOnClick(cd) {
 		this.setCd(cd)
+		this.getGeo()
 		this.setEvent()
 	}
 	
