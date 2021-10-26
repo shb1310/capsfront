@@ -22,7 +22,7 @@ const App=()=> {
      <Switch>
      <Route exact path="/" component={Home} />
      <Route path="/loc" component={Loc} />
-     <Route path="/main" component={Main} />
+     <Route path="/main/:key" component={Main} />
      <Route path="/list" component={List} />
     
      <Route path="/search" component={Search} />

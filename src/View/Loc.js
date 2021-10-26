@@ -20,13 +20,13 @@ imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵�
 // 지도를 생성합니다    
 var map = new kakao.maps.Map(mapContainer, mapOption); 
 
-var coords;
+
     <React.Fragment>
     {
          props.state.info === undefined?<br/>:
          props.state.info.map((item) => {
            
-            coords = new kakao.maps.LatLng(item.lat, item.lon);
+          var  coords = new kakao.maps.LatLng(item.lat, item.lon);
     
     console.log(item.workplacename,item.address1);
  

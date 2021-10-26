@@ -16,8 +16,7 @@ function Home() {
       console.log('메인화면으로 이동 안함');
   }
   
-
-  return (
+    return (
     <div className="Home">
       <div className="Homelogo">{/*로고가 나오는 부분 <이미지+안심식당> */}
       <br/> <br/> <br/> <br/><br/> <br/>
@@ -26,7 +25,7 @@ function Home() {
     </div>
     <br/> <br/> <br/> <br/> <br/>
     <div className="caution">IP에 따른 주소 위치 사용 동의</div><br /> <br/>{/*동의/동의안함 버튼 위의 안내 글자 */}
-    <Link style={{color:'white'}} to='/main'><button className="button_agree">동의</button></Link><br /><br />
+    <Link style={{color:'white'}} to='/main/G'><button className="button_agree">동의</button></Link><br /><br />
     {/* 동의 버튼을 누르면 바로 /loc 화면으로 이동 됨 */}
     <React.Fragment>
      <button className="button_Nagree" onClick={ openModal} >동의안함</button>

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import '../css/button.css';
 import search from '../images/search.svg';
-//import parking from '../images/parking.png';
 import {Link} from 'react-router-dom';
 import '../App.css';
 import '../css/button.css';
@@ -16,6 +15,7 @@ import Footer from '../pages/Footer';
 
 
 class Main extends Component {
+	
 	componentDidMount(){
 		navigator.geolocation.getCurrentPosition(
 			(position)=>{
@@ -29,7 +29,7 @@ class Main extends Component {
 	}
 	constructor(props) {
 		super(props);
-		
+		console.log(props.match.params.key);
 		this.state = {loc:false, parameters:{options:'',wardname:'',
 		}};
 		this.setCd = this.setCd.bind(this);
@@ -38,6 +38,7 @@ class Main extends Component {
 		this.latitude=0.0;
 		this.longitude=0.0;
 		this.categoryOnClick = this.categoryOnClick.bind(this);
+		this.key=props.match.params.key;
 		this.event = false
 		this.urls = ["http://test-proj-dev.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi",
 		"http://test-proj-dev.ap-northeast-2.elasticbeanstalk.com/testapp/publicpapi"]
@@ -54,12 +55,12 @@ class Main extends Component {
 					...prevState.parameters,
 					lat:latG,
 					lon:lonG,
-					range:0.01
+					range:0.05
 					},
 				
 				})
 			)
-			this.setOptions("g");
+			this.setOptions("dg");
 		}
 		
 	getData() {		
@@ -128,13 +129,24 @@ class Main extends Component {
 	setEvent() {
 		this.event = !this.event
 	}
-	
 	categoryOnClick(cd) {
 		this.setCd(cd)
 		this.getGeo()
 		this.setEvent()
 	}
 	
+	categoryOnClick(cd) {
+		
+		if(this.key==='G')
+		{this.setCd(cd);
+		this.getGeo();
+		this.setEvent();}
+		else if(this.key==='N')
+		{
+		this.setCd(cd);
+		this.setEvent();
+		}
+}
 	render()
 	{
 
@@ -156,7 +168,6 @@ class Main extends Component {
           </div>
 
           <div className="search">{/* 검색창에 대한 div*/}
-          {/*<Link to='/locp'> <img src={parking} className="parking" alt="parking" /> </Link> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/}
 		  <button onClick = {() => this.setLoc()} 
 		  style={{width:"100px", height:"50px", backgroundColor:"black",color:"white",fontSize:"20px", borderRadius:"20px", marginLeft:"-20px" }}>
 			  {this.state.loc?"loc":"list"}</button>
