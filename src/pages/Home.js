@@ -29,7 +29,7 @@ function Home() {
     <Link style={{color:'white'}} to='/main'><button className="button_agree">동의</button></Link><br /><br />
     {/* 동의 버튼을 누르면 바로 /loc 화면으로 이동 됨 */}
     <React.Fragment>
-     <button className="button_Nagree" onClick={ openModal }>동의안함</button>
+     <button className="button_Nagree" onClick={ openModal} >동의안함</button>
      {/*header 부분에 텍스트를 입력한다.*/}
      <Modal open={ modalOpen } close={ closeModal } header="경고">
 

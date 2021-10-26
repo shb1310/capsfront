@@ -2,23 +2,23 @@ import '../css/button.css';
 import '../css/Search.css';
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+console.log('List');
 
 function List(props){	
 
-console.log('List');
+
   return (
     
     <div id="List">
     <br /><br />
-    <table class="result">
+    <table className="result">
         <thead>
           <tr>
             <th>안심식당SEQ</th>
-            <th class="name">식당명</th>
-            <th class="address1">주소</th>  
-            <th class="address2">주소 상세</th>  
-            <th class="number">전화번호</th> 
+            <th className="name">식당명</th>
+            <th className="address1">주소</th>  
+            <th className="address2">주소 상세</th>  
+            <th className="number">전화번호</th> 
           </tr>
         </thead>
         <tbody>
@@ -28,11 +28,11 @@ console.log('List');
 		      	props.state.info === undefined?<br/>:
           	props.state.info.map(item => {return(
           		<tr> 
-           			<td class="id" key={item.ansimseq}>{item.ansimseq}</td>
-                 <td class="name"><Link to={{pathname:`/infopage/${item.workplacename}/${item.address1}/${item.address2}/${item.tel}/${item.lat}/${item.lon}`}}>{item.workplacename}</Link></td>
-                 	<td class="address1">{item.address1}</td>
-                   <td class="address2">{item.address2}</td>
-                   <td class="number">{item.tel}</td>
+           			<td className="id" key={item.ansimseq}>{item.ansimseq}</td>
+                 <td className="name"><Link to={{pathname:`/infopage/${item.workplacename}/${item.address1}/${item.address2}/${item.tel}/${item.lat}/${item.lon}`}}>{item.workplacename}</Link></td>
+                 	<td className="address1">{item.address1}</td>
+                   <td className="address2">{item.address2}</td>
+                   <td className="number">{item.tel}</td>
                
                  </tr>
                     )

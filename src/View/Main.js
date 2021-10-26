@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../css/button.css';
 import search from '../images/search.svg';
-import parking from '../images/parking.png';
+//import parking from '../images/parking.png';
 import {Link} from 'react-router-dom';
 import '../App.css';
 import '../css/button.css';
@@ -16,11 +16,21 @@ import Footer from '../pages/Footer';
 
 
 class Main extends Component {
-	
+	componentDidMount(){
+		navigator.geolocation.getCurrentPosition(
+			(position)=>{
+				this.setState({
+					lat:position.coords.latitude,
+					lon:position.coords.longitude,
+					error:null,
+				});
+			}	
+		)
+	}
 	constructor(props) {
 		super(props);
 		
-		this.state = {loc:false, parameters:{options:"",wardname:'',
+		this.state = {loc:false, parameters:{options:'',wardname:'',
 		}};
 		this.setCd = this.setCd.bind(this);
 		this.setLoc = this.setLoc.bind(this);
@@ -34,17 +44,9 @@ class Main extends Component {
 		
 	}
 	getGeo(){
-		var lat=0.0;
-		var lon=0.0;
-	// GeoLocation을 이용해서 접속 위치를 얻어옵니다
-	navigator.geolocation.getCurrentPosition(function(position) {
+
 	
-	 lat = position.coords.latitude; // 위도
-	 lon = position.coords.longitude; // 경도
-	 console.log(lat,lon);
-	});
-	console.log(lat,lon);
-	this.setGeo(lat,lon);
+	this.setGeo(this.state.lat,this.state.lon);
 	}	
 	setGeo(latG,lonG){
 			this.setState(prevState =>({			
@@ -52,7 +54,7 @@ class Main extends Component {
 					...prevState.parameters,
 					lat:latG,
 					lon:lonG,
-					range:0.05
+					range:0.01
 					},
 				
 				})
@@ -67,8 +69,15 @@ class Main extends Component {
   			})
   			.then(res => this.setState({info:res.data}))
   			.catch(err => console.log(err))
+			  this.getdata = axios.get(this.urls[1], {
+				params: this.state.parameters
+				  })
+				  .then(res => this.setState({pinfo:res.data}))
+				  .catch(err => console.log(err))
+			  
 		this.setEvent()
 		}	
+
 	}
 	
 	
@@ -147,7 +156,7 @@ class Main extends Component {
           </div>
 
           <div className="search">{/* 검색창에 대한 div*/}
-          <Link to='/locp'> <img src={parking} className="parking" alt="parking" /> </Link> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          {/*<Link to='/locp'> <img src={parking} className="parking" alt="parking" /> </Link> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/}
 		  <button onClick = {() => this.setLoc()} 
 		  style={{width:"100px", height:"50px", backgroundColor:"black",color:"white",fontSize:"20px", borderRadius:"20px", marginLeft:"-20px" }}>
 			  {this.state.loc?"loc":"list"}</button>
