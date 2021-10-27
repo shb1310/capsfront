@@ -1,7 +1,6 @@
 #한식:focus, #중식:focus, #일식:focus, #서양식:focus, #기타외국식:focus,#기타_음식점업:focus{
     background-color: gold;
   }
-
 #기타외국식,#기타_음식점업{
     background-color: white;
     color:black;
@@ -25,6 +24,7 @@
     border-radius: 100px;
    
 }
+
 @media (max-width:600px){ /*가로 너비가 600px 이하일 때 아래 스타일 적용*/
     #한식, #중식, #일식{
         background-color: white;

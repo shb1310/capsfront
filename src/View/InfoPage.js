@@ -4,13 +4,14 @@ import Nav from '../pages/Nav';
 import Footer from '../pages/Footer';
 
 function InfoPage({match,history}){
-function share(){
+function Share(){
     var shareBtn =document.getElementById("shareBtn");
   if(shareBtn){
     shareBtn.addEventListener("click",function(){
-
-        var Title="공유하기";
-        var Text="안심식당사이트입니다.";
+      
+     
+        var Title="안심식당 정보 공유";
+        var Text="링크를 클릭하면 해당 상세정보 창으로 이동";
         var shareURL=" "; 
 
         if (navigator.share) {
@@ -57,7 +58,7 @@ function share(){
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
         mapOption = {
             center: new kakao.maps.LatLng(37.60450771132806, 126.92827091218756), // 지도의 중심좌표
-            level: 7 // 지도의 확대 레벨
+            level: 4 // 지도의 확대 레벨
         };  
     
     // 지도를 생성합니다    
@@ -93,17 +94,17 @@ function share(){
      <div id="content">
          <div id="map" style={{width:"300px",height:"300px",position:"relative",left:"600px"}}></div> 
           <br/>
-        <div>
+        <div id="Info">
          식당 이름: {match.params.workplace}<br/><br/>
          식당 주소:{match.params.address1}{match.params.address2}<br/><br/>
          식당 전화번호: {match.params.tel}</div>
          <br/><br/>
      <button className="return" onClick={goBack} 
-     style={{backgroundColor:"black", color:"white"}}>리스트로 돌아가기</button>
+     style={{backgroundColor:"black", color:"white",border:"solid",borderRadius:"20px", width:"200px",height:"50px"}}>리스트로 돌아가기</button><br/><br/>
      <button className="copy" onClick={copy} 
-     style={{backgroundColor:"black", color:"white"}}>전화번호 복사하기</button><br/><br/>
-  <button id="shareBtn" onClick={share} 
-     style={{backgroundColor:"black", color:"white"}}>현재 페이지 주소 공유하기</button>
+     style={{backgroundColor:"black", color:"white",border:"solid",borderRadius:"20px", width:"200px",height:"50px"}}>전화번호 복사하기</button><br/><br/>
+  <button id="shareBtn" onClick={Share} 
+     style={{backgroundColor:"black", color:"white",border:"solid",borderRadius:"20px", width:"200px",height:"50px"}}>현재 페이지 주소 공유하기</button>
      </div>
      <Footer/>
 

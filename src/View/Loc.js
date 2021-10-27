@@ -46,7 +46,7 @@ var marker = new kakao.maps.Marker({
 kakao.maps.event.addListener(marker, 'click', function() {
     // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
     infowindow.setContent('<div style="padding:5px;font-size:12px;width:300px;">' +
-     pitem.ppname+'<br/>'+pitem.ppaddress1+pitem.ppaddress2+ '<br/>'+pitem.tel+'<br/>'+
+     pitem.ppname+'('+pitem.isfree+')'+'<br/>'+pitem.ppaddress1+pitem.ppaddress2+ '<br/>'+pitem.tel+'<br/>'+
     '운영요일: '+pitem.opdays+'<br/>'+
     '</div>');
     infowindow.open(map, marker);

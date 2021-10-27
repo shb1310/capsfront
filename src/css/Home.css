@@ -4,10 +4,10 @@
 .Homelogo{
   display:inline-block;
 }
-.button_agree, .button_Nagree {
-    font-size:15px;
+.button_agree{
+    font-size:20px;
     font-family:Georgia;
-    width:140px;
+    width:300px;
     height:50px;
     border-width:1px;
     color:rgba(255, 255, 255, 1);
@@ -27,10 +27,7 @@
     background: rgb(255, 255, 255);
     color:black;
   }
-  .button_Nagree:hover {
-    background: rgb(255, 255, 255);
-    color:black;
-  }
+ 
   #title{
     text-align: center;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -47,7 +44,7 @@
         height: 150px;
         float:inline-start;
     }
-    .button_agree, .button_Nagree {
+    .button_agree {
       font-size:15px;
       font-family:Georgia;
       width:100px;
