@@ -30,7 +30,7 @@ class Main extends Component {
 	constructor(props) {
 		super(props);
 		console.log(props.match.params.key);
-		this.state = {loc:false, parameters:{options:'',wardname:'',key:this.key,
+		this.state = {loc:false, parameters:{options:'',wardname:'',key:this.key, range:0.1,
 		}};
 		this.setCd = this.setCd.bind(this);
 		this.setLoc = this.setLoc.bind(this);
@@ -69,19 +69,18 @@ class Main extends Component {
     		params: this.state.parameters
   			})
   			.then(res => this.setState({info:res.data}))
-  			.catch(err => console.log(err))
+  			.catch(err => console.log(err));
 			  this.getdata = axios.get(this.urls[1], {
 				params: this.state.parameters
 				  })
 				  .then(res => this.setState({pinfo:res.data}))
-				  .catch(err => console.log(err))
+				  .catch(err => console.log(err));
 			  
-		this.setEvent()
+		this.setEvent();
 		}	
 
 	}
-	
-	
+
 	setOptions(op) {
 		if (this.state.parameters.options === undefined){
 			this.setState(prevState =>({			
