@@ -1,5 +1,4 @@
 import '../css/button.css';
-import '../css/Search.css';
 import React from 'react';
 import {Link} from 'react-router-dom';
 console.log('List');

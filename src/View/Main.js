@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
 import '../css/button.css';
-import search from '../images/search.svg';
 import {Link} from 'react-router-dom';
 import '../App.css';
 import '../css/button.css';
 import '../css/logoF.css';
 import '../css/list.css';
-import '../css/Search.css';
 import List from './List';
 import Loc from './Loc';
 import Nav from '../pages/Nav';
@@ -165,9 +163,7 @@ class Main extends Component {
 		  <button onClick = {() => this.setLoc()} 
 		  style={{width:"100px", height:"50px", backgroundColor:"black",color:"white",fontSize:"20px", borderRadius:"20px", marginLeft:"-20px" }}>
 			  {this.state.loc?"loc":"list"}</button>
-         {/* <input className="inputtxt" placeholder="검색어를 입력하세요"   />
-        &nbsp;   &nbsp;
-            <Link to='/search'> <img src={search} className="searchIcon" alt="search"/></Link> 검색->돋보기 모양 이미지->search 페이지로 연결 */}
+        
            </div>
 			<div id = "test">
 			{this.getData()}
