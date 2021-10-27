@@ -50,6 +50,10 @@ class Main extends Component {
 		
 	}
 /*	getGeo(){
+<<<<<<< HEAD
+=======
+
+>>>>>>> 453c89135bae7b77e15747e39c2106870e5fac46
 	
 	this.setGeo(this.state.lat,this.state.lon);
 	}	
