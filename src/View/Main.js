@@ -15,15 +15,22 @@ import Footer from '../pages/Footer';
 class Main extends Component {
 	
 	componentDidMount(){
-		navigator.geolocation.getCurrentPosition(
-			(position)=>{
-				this.setState({
-					lat:position.coords.latitude,
-					lon:position.coords.longitude,
-					error:null,
-				});
-			}	
-		)
+		if(this.key==='G'){
+			navigator.geolocation.getCurrentPosition(
+				(position)=>{
+					this.setState(prevState =>({			
+						parameters:{
+						...prevState.parameters,
+						lat:position.coords.latitude,
+						lon:position.coords.longitude,
+						range:0.05 },				
+						})
+					)
+				}	
+			)
+			
+			this.setOptions("g");
+		}
 	}
 	constructor(props) {
 		super(props);
@@ -42,7 +49,7 @@ class Main extends Component {
 		"http://test-proj-dev.ap-northeast-2.elasticbeanstalk.com/testapp/publicpapi"]
 		
 	}
-	getGeo(){
+/*	getGeo(){
 
 	
 	this.setGeo(this.state.lat,this.state.lon);
@@ -59,7 +66,7 @@ class Main extends Component {
 				})
 			)
 			this.setOptions("dg");
-		}
+		}*/
 		
 	getData() {		
 		if(this.isEvent()){
@@ -129,16 +136,10 @@ class Main extends Component {
 	
 	categoryOnClick(cd) {
 		
-		if(this.key==='G')
-		{this.setCd(cd);
-		this.getGeo();
-		this.setEvent();}
-		else if(this.key==='N')
-		{
 		this.setCd(cd);
 		this.setEvent();
-		}
-}
+	}
+	
 	render()
 	{
 
