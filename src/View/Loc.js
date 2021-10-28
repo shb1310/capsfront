@@ -63,10 +63,7 @@ kakao.maps.event.addListener(marker, 'click', function() {
            
           var  coords = new kakao.maps.LatLng(item.lat, item.lon);
     
-   // console.log(item.workplacename,item.address1);
- 
 // HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
-//if (navigator.geolocation) {
     if(type==='G'){
   // GeoLocation을 이용해서 접속 위치를 얻어옵니다
   navigator.geolocation.getCurrentPosition(function(position) {
@@ -85,8 +82,6 @@ kakao.maps.event.addListener(marker, 'click', function() {
 
   displayMarker(item);
 }
-    
-
 
 // 지도에 마커와 인포윈도우를 표시하는 함수입니다
 function displayMarkerG(locPosition, message) {
@@ -94,7 +89,6 @@ function displayMarkerG(locPosition, message) {
 // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
 var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
 markerPosition = locPosition; // 마커가 표시될 위치입니다
-  
   
     // 마커를 생성합니다
     var marker = new kakao.maps.Marker({  
@@ -136,8 +130,7 @@ function displayMarker(item) {
       infowindow.setContent('<div style="padding:5px;font-size:12px;width:300px;">' + item.workplacename+'<br/>'+item.address1+'<br/>'+item.tel+'</div>');
       infowindow.open(map, marker);
   });
- 
-  map.setCenter(Position);   
+    
 }
 
          })			
