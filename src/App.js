@@ -21,7 +21,7 @@ const App=()=> {
      <Switch>
      <Route exact path="/" component={Home} />
      <Route path="/loc" component={Loc} />
-     <Route path="/main/:key" component={Main} />
+     <Route path="/main" component={Main} />
      <Route path="/list" component={List} />
 
      <Route exact path='/infopage/:workplace/:address1/:address2/:tel/:lat/:lon' component={InfoPage} />

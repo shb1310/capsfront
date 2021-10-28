@@ -11,7 +11,7 @@ import Footer from '../pages/Footer';
 class Main extends Component {
 	
 	componentDidMount(){
-		if(this.key==='G'){
+		
 			navigator.geolocation.getCurrentPosition(
 				(position)=>{
 					this.setState(prevState =>({			
@@ -26,12 +26,12 @@ class Main extends Component {
 			)
 			
 			this.setOptions("g");
-		}
+		
 	}
 	constructor(props) {
 		super(props);
 		console.log(props.match.params.key);
-		this.state = {loc:false, parameters:{options:'',wardname:'',key:this.key, range:0.1,
+		this.state = {loc:false, parameters:{options:'',wardname:'', range:0.1,
 		}};
 		this.setCd = this.setCd.bind(this);
 		this.setLoc = this.setLoc.bind(this);
@@ -39,7 +39,6 @@ class Main extends Component {
 		this.latitude=0.0;
 		this.longitude=0.0;
 		this.categoryOnClick = this.categoryOnClick.bind(this);
-		this.key=props.match.params.key;
 		this.event = false
 		this.urls = ["http://test-proj-dev.ap-northeast-2.elasticbeanstalk.com/testapp/ansimapi",
 		"http://test-proj-dev.ap-northeast-2.elasticbeanstalk.com/testapp/publicpapi"]

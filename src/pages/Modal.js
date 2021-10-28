@@ -20,7 +20,7 @@ const Modal = ( props ) => {
                      (나가기 버튼을 클릭할 시에는<br/> 서비스를 이용하지 못합니다.)
                     </main>
                     <footer>{/*사용하기 버튼: 서비스 이용, 나가기 버튼: 서비스 이용 불가 */}
-                    <Link to="/main/G"><button className="agree" > 사용하기 </button></Link> &nbsp;
+                    <Link to="/main"><button className="agree" > 사용하기 </button></Link> &nbsp;
                        | <button className="close" onClick={close}> 나가기 </button>
                     </footer>
                 </section>

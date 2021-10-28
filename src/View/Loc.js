@@ -64,7 +64,7 @@ kakao.maps.event.addListener(marker, 'click', function() {
           var  coords = new kakao.maps.LatLng(item.lat, item.lon);
     
 // HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
-    if(type==='G'){
+    if(navigator.geolocation){
   // GeoLocation을 이용해서 접속 위치를 얻어옵니다
   navigator.geolocation.getCurrentPosition(function(position) {
       
